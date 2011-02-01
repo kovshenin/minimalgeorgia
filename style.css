@@ -1,0 +1,556 @@
+/*
+Theme Name: Minimal Georgia
+Theme URI: http://kovshenin.com/wordpress/themes/minimal-georgia/
+Description: A sweet multi-color theme filled with Georgia goodness. Two columns, widgets and menus.
+Author: Konstantin Kovshenin
+Author URI: http://kovshenin.com
+Version: 1.0
+Tags: black, gray, blue, red, purple, white, two-columns, fixed-width, threaded-comments, translation-ready, microformats, rtl-language-support, editor-style
+*/
+
+* {
+	font-family: Georgia, serif;
+}
+
+body {
+	font-family: Georgia, serif;
+	font-size: 100%;
+	background: white url(images/bg.png) 50% 0%;
+}
+
+.header-fill {
+	background: black url(images/header-fill.png) 0 0 repeat-x;
+	height: 39px;
+	-moz-box-shadow: 0px 2px 6px #999;
+	-webkit-box-shadow: 0px 2px 6px #999;
+	box-shadow: 0px 2px 6px #999;
+	margin-bottom: 40px;
+}
+
+a.logo {
+	text-shadow: 1px 1px 2px #111;
+	text-decoration: none;
+	font-size: 16pt;
+	float: left;
+	margin-top: 8px;
+	color: white;
+}
+
+ul#menu-header, .menu ul {
+	list-style: none;
+	float: right;
+	margin-top: 10px;
+}
+
+ul#menu-header li, .menu ul li {
+	float: left;
+	margin-left: 24px;
+}
+
+ul#menu-header li a, .menu ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+ul#menu-header li a:hover, ul#menu-header li.current_page_item a, .menu ul li a:hover, .menu ul li.current_page_item a{
+	color: #99B9D1;
+}
+
+.right-arrow-container {
+	position: relative;
+}
+
+.right-arrow {
+	position: absolute;
+	height: 26px;
+	width: 11px;
+	background: #eaeaea url(images/gray-arrow-right.png) 1px 0 no-repeat;
+	right: -23px;
+	top: 8px;
+}
+
+p.date {
+	margin-top: 6px !important;
+}
+
+p.date a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+p.comments-count a {
+	color: #888;
+	text-decoration: none;
+}
+
+p.date, p.comments-count {
+	color: #888;
+	font-size: 9pt;
+	float: right;
+	clear: both;
+	margin: 0;
+	line-height: 1.2em;
+}
+
+p.comments-count {
+	margin-top: 4px;
+	padding-right: 15px;
+	background: url(images/comment-icon-small.png) right 2px no-repeat;
+	height: 18px;
+}
+
+.hentry .omega, .hentry .alpha {
+	margin-top: 20px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 10px auto;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 10px 10px 10px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 20px 20px 20px 0;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin: 10px 0 10px 10px;
+}
+
+p {
+	margin: 20px 0;
+	font-size: 13pt;
+	line-height: 16pt;
+	color: #333;
+}
+
+.post-content, .post-meta {
+	font-size: 13pt;
+	line-height: 16pt;
+	color: #333;
+}
+
+.post-meta {
+	clear: both;
+}
+
+.post-content.no-title {
+	margin-top: -10px !important;
+}
+
+a {
+	color: #124D87;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.post-content img {
+	padding: 8px;
+	border: solid 1px #999;
+	max-width: 700px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	color: #333;
+}
+
+blockquote {
+	background: white url(images/quote.png) -2px -2px no-repeat;
+	padding-left: 42px;
+	line-height: 16pt;
+	color: #333;
+}
+
+blockquote p:first-child {
+	padding-top: 4px;
+}
+
+blockquote cite {
+	font-size: 10pt;
+}
+
+ul, ol {
+	margin-left: 42px;
+	color: #333;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol ol {
+    list-style: upper-alpha;
+}
+
+ol ol ol {
+    list-style: lower-roman;
+}
+
+ol ol ol ol {
+    list-style: lower-alpha;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+big {
+	font-size: 130%;
+}
+
+code, tt, code, kbd, samp, pre {
+	font-family: monospace;
+	font-size: 11pt;
+}
+
+pre {
+	background: #f3f3f3;
+	padding: 16px;
+}
+
+q::before {
+	content: '"';
+}
+
+q::after {
+	content: '"';
+}
+
+sup, sub {
+	font-size: 10pt;
+	position: relative;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+ins {
+	background: #FFC;
+}
+
+table {
+	width: 100%;
+	margin: 20px 0;
+}
+
+table th {
+	text-align: left;
+	padding: 8px;
+	font-weight: normal;
+	border-bottom: solid 1px #ddd;
+}
+
+dl {
+	margin: 20px 0;
+}
+
+dt {
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+table td {
+	text-align: left;
+	padding: 8px;
+	border-bottom: dotted 1px #ddd;
+}
+
+li {
+	line-height: 16pt;
+}
+
+p.wp-caption-text {
+	color: #888;
+	font-style: oblique;
+	margin-top: 2px;
+	font-size: 9pt;
+	text-align: center;
+}
+
+.post-title a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h2.post-title, h1.post-title {
+	font-size: 26pt;
+	text-shadow: 1px 1px 1px #A0A0A0;
+	margin-bottom: 24px;
+	margin-top: 0;
+	line-height: 30pt;
+}
+
+h2.search-results.post-title {
+	font-size: 16pt;
+	margin-bottom: -16px;
+}
+
+h1.search-title {
+	font-size: 14pt;
+	margin-bottom: 0px;
+	margin-top: 0;
+	line-height: 30pt;
+}
+
+h1 {
+	font-size: 26pt;
+}
+
+h2 {
+	font-size: 24pt;
+}
+
+h3 {
+	font-size: 20pt;
+}
+
+h4, h5, h6 {
+	font-size: 16pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+/* Sidebar Widgets */
+
+.widget {
+	margin-left: 40px;
+	padding-top: 14px;
+}
+
+.widget p {
+	margin-bottom: 10px;
+}
+
+.sidebar {
+	padding-top: 20px;
+}
+
+#s {
+	width: 200px;
+	height: 24px;
+	border: solid 1px #ccc;
+	border-radius: 4px;
+	font-size: 13pt;
+	line-height: 18pt;
+	color: #333;
+	padding-left: 26px;
+	background: white url(images/search-icon.png) 4px 3px no-repeat;
+}
+
+#s:focus {
+	border-color: #3f81c3;
+}
+
+#searchform label, #searchsubmit {
+	display: none;
+}
+
+.widget .heading {
+	text-shadow: 1px 1px 1px #bbb;
+	margin-top: 20px;
+	font-size: 16pt;
+	padding-bottom: 6px;
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 10px;
+}
+
+.widget ul, .widget ol {
+	list-style: none;
+	margin-left: 0;
+}
+
+/* Pagination */
+
+.pagination .omega {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.footer {
+	margin-top: 40px;
+}
+
+.footer p {
+	margin-bottom: 20px;
+	color: #888;
+	font-size: 11pt;
+	line-height: 13pt;
+}
+
+.footer a {
+	color: inherit;
+}
+
+
+/* Gallery */
+.post-content .gallery {
+	margin: 0px auto 18px;
+}
+
+.post-content .gallery-item {
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+
+.gallery img {
+	border: solid 1px #ccc !important;
+}
+
+.gallery-caption {
+	color: #888;
+	font-style: oblique;
+	margin-top: 2px;
+	font-size: 9pt;
+	text-align: center;
+}
+
+
+/* Smiley */
+img.wp-smiley {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Comments */
+
+ol.commentlist {
+	list-style: none;
+	margin-left: 0;
+}
+
+.commentlist li.comment {
+	position: relative;
+	padding: 0px 0px 0px 56px;
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 24px;
+}
+
+#comments .pingback {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 18px;
+}
+
+.pingback p {
+	font-size: 10pt;
+	color: #888;
+}
+
+.pingback a {
+	font-size: inherit;
+	font-style: oblique;
+}
+
+.comment-edit-link {
+	color: inherit;
+	text-decoration: underline !important;
+}
+
+img.avatar {
+	position: absolute;
+	left: 0px;
+	top: 1px;
+}
+
+.comment-author cite {
+	font-weight: bold;
+	font-style: normal;
+	font-size: 1.1em;
+}
+
+.comment-meta, .comment-meta a {
+	font-size: 10pt;
+	color: #888;
+	text-decoration: none;
+}
+
+.commentlist .children li {
+	border: none;
+	margin: 0px;
+}
+
+.commentlist .children {
+	list-style: none;
+	margin: 0px;
+}
+
+.reply {
+	padding: 0px 0px 24px;
+}
+
+#comments .nocomments {
+	color: #888;
+}
+
+/* Comment form */
+
+#respond .required {
+	color: #FF4B33;
+}
+
+#respond label {
+	color: #888;
+	font-size: 10pt;
+}
+
+#respond textarea, #respond input[type=text] {
+	width: 95%;
+	font-size: 12pt;
+	line-height: 18pt;
+	padding: 4px;
+	border-radius: 4px 4px;
+	border: solid 1px #ddd;
+}
+
+#respond input[type=text] {
+	
+}
+
+#respond textarea:focus, #respond input[type=text]:focus {
+	border-color: #3F81C3;
+}
+
+#respond .form-allowed-tags, #respond code {
+	color: #888;
+	font-size: 10pt;
+	line-height: 18px;
+}
+
+#respond .form-submit input {
+	font-size: 13pt;
+}
