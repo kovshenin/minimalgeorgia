@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimal Georgia\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-02 14:25+0300\n"
+"POT-Creation-Date: 2011-02-02 15:54+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
 "Language-Team: Konstantin Kovshenin <kovshenin@gmail.com>\n"
@@ -30,16 +30,16 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../search.php:47
-#: ../single.php:41
+#: ../single.php:45
 #: ../archive.php:56
-#: ../index.php:41
+#: ../index.php:42
 msgid "&larr; Older posts"
 msgstr "&larr; Older posts"
 
 #: ../search.php:48
-#: ../single.php:42
+#: ../single.php:46
 #: ../archive.php:57
-#: ../index.php:42
+#: ../index.php:43
 msgid "Newer posts &rarr;"
 msgstr "Newer posts &rarr;"
 
@@ -75,11 +75,16 @@ msgstr "Categories"
 msgid "Blogroll"
 msgstr "Blogroll"
 
-#: ../single.php:28
+#: ../single.php:29
 #: ../page.php:28
 #: ../index.php:30
 msgid "Pages:"
 msgstr "Pages:"
+
+#: ../single.php:32
+#: ../index.php:31
+msgid "Edit this post"
+msgstr "Edit this post"
 
 #: ../footer.php:13
 #, php-format
@@ -121,6 +126,10 @@ msgstr "Not Found"
 msgid "We're deeply sorry, but the page you were looking for cannot be found. Try something from the list below:"
 msgstr "We're deeply sorry, but the page you were looking for cannot be found. Try something from the list below:"
 
+#: ../page.php:29
+msgid "Edit this page"
+msgstr "Edit this page"
+
 #: ../archive.php:20
 #, php-format
 msgid "Daily Archives: <span>%s</span>"
@@ -140,82 +149,87 @@ msgstr "Yearly Archives: <span>%s</span>"
 msgid "Blog Archives"
 msgstr "Blog Archives"
 
-#: ../functions.php:34
+#: ../functions.php:38
 msgid "Primary Navigation Menu"
 msgstr "Primary Navigation Menu"
 
-#: ../functions.php:35
+#: ../functions.php:39
 msgid "Page Not Found Menu"
 msgstr "Page Not Found Menu"
 
-#: ../functions.php:54
+#: ../functions.php:61
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">says:</span>"
 
-#: ../functions.php:57
+#: ../functions.php:64
 msgid "Your comment is awaiting moderation."
 msgstr "Your comment is awaiting moderation."
 
-#: ../functions.php:64
+#: ../functions.php:71
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: ../functions.php:64
-#: ../functions.php:81
+#: ../functions.php:71
+#: ../functions.php:88
 msgid "(Edit)"
 msgstr "(Edit)"
 
-#: ../functions.php:81
+#: ../functions.php:88
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:90
+#: ../functions.php:97
 msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
 msgstr "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
 
-#: ../functions.php:106
+#: ../functions.php:113
 msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
 msgstr "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
 
-#: ../functions.php:127
+#: ../functions.php:134
 msgid "Theme Options"
 msgstr "Theme Options"
 
-#: ../functions.php:136
+#: ../functions.php:143
 msgid "Minimal Georgia Options"
 msgstr "Minimal Georgia Options"
 
-#: ../functions.php:144
+#: ../functions.php:151
 msgid "Color Scheme"
 msgstr "Color Scheme"
 
-#: ../functions.php:150
+#: ../functions.php:157
 msgid "Sapphire"
 msgstr "Sapphire"
 
-#: ../functions.php:151
+#: ../functions.php:158
 msgid "Inferno"
 msgstr "Inferno"
 
-#: ../functions.php:152
+#: ../functions.php:159
 msgid "Emeraldo"
 msgstr "Emeraldo"
 
-#: ../functions.php:153
+#: ../functions.php:160
 msgid "Silent Gray"
 msgstr "Silent Gray"
 
-#: ../functions.php:154
+#: ../functions.php:161
 msgid "Liquid Purple"
 msgstr "Liquid Purple"
 
-#: ../functions.php:159
+#: ../functions.php:166
 msgid "Footer Note"
 msgstr "Footer Note"
 
-#: ../functions.php:166
+#: ../functions.php:173
 msgid "Save Changes"
 msgstr "Save Changes"
+
+#: ../header.php:30
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"
 

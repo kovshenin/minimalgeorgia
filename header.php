@@ -14,7 +14,22 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
-	<title><?php wp_title(); ?> <?php bloginfo('name'); ?></title>
+	<title><?php
+		// Let's construct the title
+		global $page, $paged;
+		wp_title('-', true, 'right');
+
+		// Add the blog name and description if available (on the front page).
+		bloginfo('name');
+		$site_description = get_bloginfo('description', 'display');
+		if ($site_description && (is_home() || is_front_page()))
+			echo " &#8211; $site_description";
+
+		// Add a page number if necessary:
+		if ($paged >= 2 || $page >= 2)
+			echo ' &#8211; ' . sprintf(__('Page %s', 'minimalgeorgia'), max($paged, $page));
+
+	?></title>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/reset.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/960.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
