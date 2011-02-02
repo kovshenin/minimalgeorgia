@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The Header Area
+ *
+ * Appropriate stylesheets, wp_head and color-scheme selection
+ * using the body class. The primary navigation menu is present
+ * here.
+ *
+ * @package WordPress
+ * @subpackage Minimal Georgia
+ * @since 1.0
+ */
+?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
@@ -10,7 +22,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('mg-' . get_option('mg-color-scheme')); ?>>
 	<div class="header-fill">
 		<div class="container_8 header">
 			<div class="grid_1">
@@ -19,7 +31,7 @@
 			<div class="grid_2">
 				<a href="<?php bloginfo('url'); ?>" class="logo"><?php bloginfo('name'); ?></a>
 			</div>
-			<div class="grid_5">
+			<div class="grid_5 pre-menu">
 				<?php wp_nav_menu(array('menu' => 'primary', 'menu_id' => 'menu-header', 'theme_location' => 'primary', 'depth' => 1)); ?> 
 			</div>
 		</div>

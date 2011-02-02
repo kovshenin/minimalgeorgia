@@ -1,3 +1,15 @@
+<?php
+/**
+ * The Holy Sidebar
+ *
+ * There's one widgetized area that can be used. In case it isn't
+ * we fall back with some static content.
+ *
+ * @package WordPress
+ * @subpackage Minimal Georgia
+ * @since 1.0
+ */
+?>
 		<div class="grid_2 sidebar">
 			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()): ?>
 			<div class="widget">
@@ -11,25 +23,25 @@
 			</div>
 			
 			<div class="widget">
-				<p class="heading">Hey There!</p>
-				<p>Welcome to the Minimal Georgia theme. You're seeing this widget because you haven't
-				configured your sidebar widgets. Browse to Appearance &mdash; Widgets in your admin panel.</p>
-				<p><a href="http://kovshenin.com/wordpress/themes/minimal-georgia/">About the theme &raquo;</a></p>
+				<p class="heading"><?php _e('Hey There!', 'minimalgeorgia'); ?></p>
+				<p><?php _e('Welcome to the Minimal Georgia theme. You\'re seeing this text because you haven\'t configured your widgets. Browse to the Widgets section in your admin panel.', 'minimalgeorgia'); ?></p>
+				<p><a href="http://kovshenin.com/wordpress/themes/minimal-georgia/"><?php _e('About the theme &raquo;', 'minimalgeorgia'); ?></a></p>
 			</div>
-			
+
 			<div class="widget">
-				<p class="heading">Archives</p>
+				<p class="heading"><?php _e('Archives', 'minimalgeorgia'); ?></p>
 				<ul>
+					<li><a href="#">January 2011</a></li>
+					<li><a href="#">December 2010</a></li>
+					<li><a href="#">November 2010</a></li>
 					<li><a href="#">October 2010</a></li>
-					<li><a href="#">October 2010</a></li>
-					<li><a href="#">October 2010</a></li>
-					<li><a href="#">October 2010</a></li>
-					<li><a href="#">October 2010</a></li>
+					<li><a href="#">September 2010</a></li>
+					<li><a href="#">August 2010</a></li>
 				</ul>
 			</div>
 			
 			<div class="widget">
-				<p class="heading">Categories</p>
+				<p class="heading"><?php _e('Categories', 'minimalgeorgia'); ?></p>
 				<ul>
 					<li><a href="#">WordPress</a></li>
 					<li><a href="#">Development</a></li>
@@ -40,11 +52,11 @@
 			</div>
 			
 			<div class="widget">
-				<p class="heading">Blogroll</p>
+				<p class="heading"><?php _e('Blogroll', 'minimalgeorgia'); ?></p>
 				<ul>
-					<li><a href="#">Smashing Magazine</a></li>
-					<li><a href="#">Mashable</a></li>
-					<li><a href="#">TechCrunch</a></li>
+					<li><a href="http://smashingmagazine.com">Smashing Magazine</a></li>
+					<li><a href="http://mashable.com">Mashable</a></li>
+					<li><a href="http://techcrunch.com">TechCrunch</a></li>
 				</ul>
 			</div>
 			<?php endif; ?>

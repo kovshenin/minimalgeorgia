@@ -1,16 +1,14 @@
 <?php
 /**
- * Fall-back for all
+ * The template for displaying Pages.
  *
- * The index.php file handles requests to the homepage (with paginated
- * list of latest posts) as well as some other stuff not defined
- * in other templates.
+ * Nothing special here, similar to index.php
  *
  * @package WordPress
  * @subpackage Minimal Georgia
  * @since 1.0
  */
- 
+
 get_header(); ?>
 		<div class="grid_6 posts-list">
 			<?php while (have_posts()): the_post(); ?>
@@ -28,22 +26,11 @@ get_header(); ?>
 						<?php the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'minimalgeorgia') ); ?>
 					</div>
 					<div class="post-meta"><?php wp_link_pages(array('before' => '<p class="page-link">' . __('Pages:', 'minimalgeorgia'), 'after' => '</p>')); ?></div>
+					
+					<?php comments_template('', true); ?>
 				</div>
 			</div>
 			<?php endwhile; ?>
-			
-			<div class="pagination">
-				<div class="grid_1 alpha">
-					&nbsp;
-				</div>
-				<div class="grid_5 omega">
-					<?php if ($wp_query->max_num_pages > 1): ?>
-						<div class="left"><?php next_posts_link(__('&larr; Older posts', 'minimalgeorgia')); ?></div>
-						<div class="right"><?php previous_posts_link(__('Newer posts &rarr;', 'minimalgeorgia')); ?></div>
-					<?php endif; ?>
-				</div>
-			</div>
-
 		</div>
 		<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,12 +1,25 @@
+<?php
+/**
+ * Footer Area
+ *
+ * The footer area, nothing special. The text in the footer
+ * can be edited from within the theme options in the
+ * WordPress admin.
+ *
+ * @package WordPress
+ * @subpackage Minimal Georgia
+ * @since 1.0
+ */
+	$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', '<a href="http://kovshenin.com/wordpress/themes/minimal-georgia/">Minimal Georgia</a>', '<a href="http://kovshenin.com">Konstantin</a>');
+?>
 	</div>
-	
 	<div class="clear"></div>
 	<div class="container_8 footer">
 		<div class="grid_1">
-			<p>Copyright &copy; 2011</p>
+			<p><?php _e('Copyright', 'minimalgeorgia'); ?> &copy; <?php echo date('Y'); ?></p>
 		</div>
 		<div class="grid_5">
-			<p>Risus magna vestibulum augue, nec <a href="#">dapibus massa</a> nunc sit amet magna. Suspendisse vel diam nulla, a venenatis nisi. Risus magna vestibulum augue, nec dapibus massa nunc sit amet magna. Suspendisse vel diam nulla, a venenatis nisi.</p>
+			<?php echo apply_filters('the_content', get_option('mg-footer-note') . $author_credit); ?>
 		</div>
 	</div>
 	<div class="clear"></div>

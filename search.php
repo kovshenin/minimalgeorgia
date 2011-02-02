@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Search Template
+ *
+ * Search results titles are a little smaller in size and
+ * excerpts are output instead of content.
+ *
+ * @package WordPress
+ * @subpackage Minimal Georgia
+ * @since 1.0
+ */
+
+get_header(); ?>
 		<div class="grid_6 posts-list">
 			<div class="grid_1 alpha right-arrow-container">
 				&nbsp;
@@ -6,8 +18,7 @@
 			<div class="grid_5 omega">
 				<h1 class="search-title"><?php printf(__('Search Results for: %s', 'minimalgeorgia' ), '<span>' . get_search_query() . '</span>'); ?></h1>
 			</div>
-		</div>
-		<div class="grid_6 posts-list">
+			<div class="clear"></div>
 			<?php while (have_posts()): the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="grid_1 alpha right-arrow-container">

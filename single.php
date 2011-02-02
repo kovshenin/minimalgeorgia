@@ -1,10 +1,8 @@
 <?php
 /**
- * Fall-back for all
+ * Single Post
  *
- * The index.php file handles requests to the homepage (with paginated
- * list of latest posts) as well as some other stuff not defined
- * in other templates.
+ * A single post. There's not much to say..
  *
  * @package WordPress
  * @subpackage Minimal Georgia
@@ -28,6 +26,8 @@ get_header(); ?>
 						<?php the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'minimalgeorgia') ); ?>
 					</div>
 					<div class="post-meta"><?php wp_link_pages(array('before' => '<p class="page-link">' . __('Pages:', 'minimalgeorgia'), 'after' => '</p>')); ?></div>
+					
+					<?php comments_template('', true); ?>
 				</div>
 			</div>
 			<?php endwhile; ?>

@@ -18,6 +18,20 @@ body {
 	background: white url(images/bg.png) 50% 0%;
 }
 
+/* Different color schemes for Minimal Georgia */
+.mg-red .header-fill {
+	background-image: url(images/header-fill-red.png);
+}
+.mg-purple .header-fill {
+	background-image: url(images/header-fill-purple.png);
+}
+.mg-green .header-fill {
+	background-image: url(images/header-fill-green.png);
+}
+.mg-gray .header-fill {
+	background-image: url(images/header-fill-gray.png);
+}
+
 .header-fill {
 	background: black url(images/header-fill.png) 0 0 repeat-x;
 	height: 39px;
@@ -33,28 +47,64 @@ a.logo {
 	font-size: 16pt;
 	float: left;
 	margin-top: 8px;
-	color: white;
+	color: white !important;
 }
 
-ul#menu-header, .menu ul {
+.pre-menu {
+	overflow: hidden;
+	height: 32px;
+}
+
+ul#menu-header, .header .menu ul {
 	list-style: none;
 	float: right;
 	margin-top: 10px;
 }
 
-ul#menu-header li, .menu ul li {
+ul#menu-header li, .header .menu ul li {
 	float: left;
 	margin-left: 24px;
 }
 
-ul#menu-header li a, .menu ul li a {
+ul#menu-header li a, .header .menu ul li a {
 	color: white;
 	text-decoration: none;
 }
 
-ul#menu-header li a:hover, ul#menu-header li.current_page_item a, .menu ul li a:hover, .menu ul li.current_page_item a{
+ul#menu-header li a:hover, 
+ul#menu-header li.current_page_item a, 
+.header .menu ul li a:hover, 
+.header .menu ul li.current_page_item a {
 	color: #99B9D1;
 }
+
+/* Different color schemes */
+.mg-green ul#menu-header li a:hover, 
+.mg-green ul#menu-header li.current_page_item a, 
+.mg-green .header .menu ul li a:hover, 
+.mg-green .header .menu ul li.current_page_item a {
+	color: #99d1c2;
+}
+.mg-red ul#menu-header li a:hover, 
+.mg-red ul#menu-header li.current_page_item a, 
+.mg-red .header .menu ul li a:hover, 
+.mg-red .header .menu ul li.current_page_item a {
+	color: #d1a099;
+}
+.mg-gray ul#menu-header li a:hover, 
+.mg-gray ul#menu-header li.current_page_item a, 
+.mg-gray .header .menu ul li a:hover, 
+.mg-gray .header .menu ul li.current_page_item a {
+	color: #bbb;
+}
+.mg-purple ul#menu-header li a:hover, 
+.mg-purple ul#menu-header li.current_page_item a, 
+.mg-purple .header .menu ul li a:hover, 
+.mg-purple .header .menu ul li.current_page_item a {
+	color: #d199b5;
+}
+
+
 
 .right-arrow-container {
 	position: relative;
@@ -149,6 +199,11 @@ a {
 	color: #124D87;
 	text-decoration: underline;
 }
+
+.mg-red a { color: #872812; }
+.mg-purple a { color: #793d70; }
+.mg-green a { color: #128725; }
+.mg-gray a { color: #888; }
 
 a:hover {
 	text-decoration: none;
@@ -316,6 +371,10 @@ h1.search-title {
 	line-height: 30pt;
 }
 
+h1.search-title span {
+	font-style: oblique;
+}
+
 h1 {
 	font-size: 26pt;
 }
@@ -363,10 +422,6 @@ h1, h2, h3, h4, h5, h6 {
 	background: white url(images/search-icon.png) 4px 3px no-repeat;
 }
 
-#s:focus {
-	border-color: #3f81c3;
-}
-
 #searchform label, #searchsubmit {
 	display: none;
 }
@@ -383,6 +438,15 @@ h1, h2, h3, h4, h5, h6 {
 .widget ul, .widget ol {
 	list-style: none;
 	margin-left: 0;
+}
+
+.widget ul ul {
+	margin-left: 20px;
+	margin-top: 0;
+}
+
+.widget li.current_page_item > a {
+	color: black;
 }
 
 /* Pagination */
@@ -541,8 +605,32 @@ img.avatar {
 	
 }
 
-#respond textarea:focus, #respond input[type=text]:focus {
+#respond textarea:focus, 
+#respond input[type=text]:focus, 
+#s:focus {
 	border-color: #3F81C3;
+}
+
+/* Color Schemes for Minimal Georgia */
+.mg-red #respond textarea:focus, 
+.mg-red #respond input[type=text]:focus, 
+.mg-red #s:focus {
+	border-color: #872812;
+}
+.mg-purple #respond textarea:focus, 
+.mg-purple #respond input[type=text]:focus, 
+.mg-purple #s:focus {
+	border-color: #793d70;
+}
+.mg-green #respond textarea:focus, 
+.mg-green #respond input[type=text]:focus, 
+.mg-green #s:focus {
+	border-color: #128725;
+}
+.mg-gray #respond textarea:focus, 
+.mg-gray #respond input[type=text]:focus, 
+.mg-gray #s:focus {
+	border-color: #888;
 }
 
 #respond .form-allowed-tags, #respond code {
