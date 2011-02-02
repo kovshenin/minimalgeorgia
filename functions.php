@@ -27,13 +27,20 @@
 			'after_title' => '</p>',
 		));
 	}
+	
+	// Setup the Minimal Georgia theme
+	function minimalgeorgia_setup() {
+		add_theme_support('automatic-feed-links');		
+		
+		// Register our primary navigation (top right) and 404 page links.
+		if (function_exists('register_nav_menu')) {
+			add_theme_support('nav_menus');
+			register_nav_menu('primary', __('Primary Navigation Menu', 'minimalgeorgia'));
+			register_nav_menu('menu-404', __('Page Not Found Menu', 'minimalgeorgia'));
+		}
 
-	// Register our primary navigation (top right).
-	if (function_exists('register_nav_menu')) {
-		add_theme_support('nav_menus');
-		register_nav_menu('primary', __('Primary Navigation Menu', 'minimalgeorgia'));
-		register_nav_menu('menu-404', __('Page Not Found Menu', 'minimalgeorgia'));
 	}
+	add_action('after_setup_theme', 'minimalgeorgia_setup');
 
 	// Non-relevant stylesheets for galleries, remove them.
 	function minimalgeorgia_remove_gallery_css($css) {

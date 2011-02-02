@@ -13,7 +13,7 @@
 		<div class="grid_2 sidebar">
 			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()): ?>
 			<div class="widget">
-				<form role="search" method="get" id="searchform" action="<?php bloginfo('url'); ?>">
+				<form role="search" method="get" id="searchform" action="<?php echo home_url(); ?>">
 					<div>
 						<label class="screen-reader-text" for="s"><?php _e('Search for:', 'minimalgeorgia'); ?></label>
 						<input type="text" value="" name="s" id="s">

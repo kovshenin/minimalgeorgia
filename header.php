@@ -11,15 +11,16 @@
  * @since 1.0
  */
 ?><!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<title><?php wp_title(); ?> <?php bloginfo('name'); ?></title>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/960.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/960.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<?php if (is_singular() && get_option('thread_comments')) { wp_enqueue_script('comment-reply'); } ?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class('mg-' . get_option('mg-color-scheme')); ?>>
@@ -29,7 +30,7 @@
 				&nbsp;
 			</div>
 			<div class="grid_2">
-				<a href="<?php bloginfo('url'); ?>" class="logo"><?php bloginfo('name'); ?></a>
+				<a href="<?php echo home_url(); ?>" class="logo"><?php bloginfo('name'); ?></a>
 			</div>
 			<div class="grid_5 pre-menu">
 				<?php wp_nav_menu(array('menu' => 'primary', 'menu_id' => 'menu-header', 'theme_location' => 'primary', 'depth' => 1)); ?> 
