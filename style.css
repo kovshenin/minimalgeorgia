@@ -645,3 +645,9 @@ img.avatar {
 #respond .form-submit input {
 	font-size: 13pt;
 }
+
+/* Tags */
+.the-tags a, .the-tags {
+	color: #888;
+	font-size: 10pt;
+}

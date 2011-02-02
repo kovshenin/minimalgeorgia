@@ -25,7 +25,10 @@ get_header(); ?>
 					<div class="post-content <?php if (!get_the_title()) echo 'no-title'; ?>">
 						<?php the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'minimalgeorgia') ); ?>
 					</div>
-					<div class="post-meta"><?php wp_link_pages(array('before' => '<p class="page-link">' . __('Pages:', 'minimalgeorgia'), 'after' => '</p>')); ?></div>
+					<div class="post-meta">
+						<?php wp_link_pages(array('before' => '<p class="page-link">' . __('Pages:', 'minimalgeorgia'), 'after' => '</p>')); ?>
+						<p class="the-tags"><?php the_tags(); ?></p>
+					</div>
 					<?php edit_post_link(__('Edit this post', 'minimalgeorgia'), '<p>', '</p>'); ?>
 					
 					<?php comments_template('', true); ?>
