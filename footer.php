@@ -10,7 +10,7 @@
  * @subpackage Minimal Georgia
  * @since 1.0
  */
-	$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', '<a href="http://kovshenin.com/wordpress/themes/minimal-georgia/">Minimal Georgia</a>', '<a href="http://kovshenin.com">Konstantin</a>');
+	$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', 'Minimal Georgia', '<a title="WordPress Evangelist" href="http://kovshenin.com">Konstantin</a>');
 ?>
 	</div>
 	<div class="clear"></div>

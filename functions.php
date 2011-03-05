@@ -101,9 +101,13 @@
 	// Theme activation/deactivation hooks
 	function minimalgeorgia_admin_init() {
 		register_setting('minimalgeorgia-options', 'mg-color-scheme');
-		register_setting('minimalgeorgia-options', 'mg-footer-note');
+		register_setting('minimalgeorgia-options', 'mg-footer-note', 'minimalgeorgia_sanitize_footer_note');
 	}
 	add_action('admin_init','minimalgeorgia_admin_init');
+	
+	function minimalgeorgia_sanitize_footer_note($value) {
+		return strip_tags($value, '<a><b><strong><em><ul><ol><li><div><span>');
+	}
 	
 	function minimalgeorgia_firstrun() {
 		$check = get_option('mg-activated');
@@ -152,7 +156,9 @@
 				<td>
 					<select name="mg-color-scheme">
 						<?php
+							$options = array('blue' => '', 'red' => '', 'green' => '', 'gray' => '', 'purple' => '');
 							$selected = array(get_option('mg-color-scheme') => 'selected="selected"');
+							$selected = array_merge($options, $selected);
 						?>
 						<option value="blue" <?php echo @$selected['blue']; ?>><?php _e('Sapphire', 'minimalgeorgia'); ?></option>
 						<option value="red" <?php echo @$selected['red']; ?>><?php _e('Inferno', 'minimalgeorgia'); ?></option>
