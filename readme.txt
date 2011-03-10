@@ -15,6 +15,12 @@ Theme features:
  * translation-ready
  * sticky-post
 
+Notes & Limitations:
+
+ * Primary menu supports up to 6 items (depending on their names) because of the width limitation. If more are added, the extra is not visible.
+
+----
+
 Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
 
 Author: Konstantin Kovshenin (kovshenin@gmail.com)

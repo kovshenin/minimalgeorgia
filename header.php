@@ -10,6 +10,9 @@
  * @subpackage Minimal Georgia
  * @since 1.0
  */
+ 
+ global $mg_options;
+ $mg_options = get_option('minimalgeorgia-options');
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -38,7 +41,7 @@
 	<?php if (is_singular() && get_option('thread_comments')) { wp_enqueue_script('comment-reply'); } ?>
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class('mg-' . get_option('mg-color-scheme')); ?>>
+<body <?php body_class('mg-' . $mg_options['color-scheme']); ?>>
 	<div class="header-fill">
 		<div class="container_8 header">
 			<div class="grid_1">

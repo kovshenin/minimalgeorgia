@@ -8,6 +8,7 @@
  *
  * @package WordPress
  * @subpackage Minimal Georgia
+ * @version 1.2
  * @since 1.0
  */
 
@@ -19,13 +20,28 @@
 	load_theme_textdomain('minimalgeorgia', TEMPLATEPATH . '/languages');
 	
 	// Register our only sidebar.
-	if (function_exists('register_sidebar')) {
-		register_sidebar(array(
-			'before_widget' => '<div class="widget">',
-			'after_widget' => '</div>',
-			'before_title' => '<p class="heading">',
-			'after_title' => '</p>',
-		));
+	register_sidebar(array(
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<p class="heading">',
+		'after_title' => '</p>',
+	));
+	
+	add_filter('minimalgeorgia-footer', 'wpautop');
+	
+	/*
+	 * Valid Color Schemes
+	 * 
+	 * Used for validation and forms output.
+	 */
+	function minimalgeorgia_get_valid_color_schemes() {
+		return array(
+			'red' => __('Inferno', 'minimalgeorgia'),
+			'blue' => __('Saphirre', 'minimalgeorgia'),
+			'green' => __('Emeraldo', 'minimalgeorgia'),
+			'gray' => __('Silent Gray', 'minimalgeorgia'),
+			'purple' => __('Liquid Purple', 'minimalgeorgia')
+		);
 	}
 	
 	// Setup the Minimal Georgia theme
@@ -93,41 +109,47 @@
 
 	// Add a welcome notice for new users.
 	function minimalgeorgia_welcome_notice() {
-		if (!get_option('mg-options-visited'))
+		$options = get_option('minimalgeorgia-options');
+		if (!isset($options['options-visited']) || !$options['options-visited'])
 			echo "<div class='update-nag'>" . __("Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!") . "</div>";
 	}
 	add_action('admin_notices' , 'minimalgeorgia_welcome_notice');
 
 	// Theme activation/deactivation hooks
 	function minimalgeorgia_admin_init() {
-		register_setting('minimalgeorgia-options', 'mg-color-scheme');
-		register_setting('minimalgeorgia-options', 'mg-footer-note', 'minimalgeorgia_sanitize_footer_note');
+		register_setting('minimalgeorgia-options', 'minimalgeorgia-options', 'minimalgeorgia_validate_options');
+		// register_setting('minimalgeorgia-options', 'mg-footer-note', 'minimalgeorgia_sanitize_footer_note');
 	}
 	add_action('admin_init','minimalgeorgia_admin_init');
 	
-	function minimalgeorgia_sanitize_footer_note($value) {
-		return strip_tags($value, '<a><b><strong><em><ul><ol><li><div><span>');
+	function minimalgeorgia_validate_options($options) {
+		// Mandatory.
+		$options['options-visited'] = true;
+		$options['activated'] = true;
+		
+		// Theme options.
+		$options['color-scheme'] = array_key_exists($options['color-scheme'], minimalgeorgia_get_valid_color_schemes()) ? $options['color-scheme'] : 'blue';
+		$options['footer-note'] = trim(strip_tags($options['footer-note'], '<a><b><strong><em><ul><ol><li><div><span>'));
+		
+		return $options;
 	}
 	
 	function minimalgeorgia_firstrun() {
-		$check = get_option('mg-activated');
-		if ($check != "set") {
+		$options = get_option('minimalgeorgia-options');
+		if (!isset($options['activated']) || !$options['activated']) {
 			// General settings
-			update_option('mg-color-scheme', 'blue');
-			update_option('mg-footer-note', __('Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings.', 'minimalgeorgia'));
-			update_option('mg-options-visited', false);
+			$options['color-scheme'] = 'blue';
+			$options['footer-note'] = __('Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings.', 'minimalgeorgia');
+			$options['options-visited'] = false;
+			$options['activated'] = true;
 
-			// Add marker so it doesn't run in future
-			update_option('mg-activated', 'set');
+			// Update the options.
+			update_option('minimalgeorgia-options', $options);
 		}
 	}
 	
 	function minimalgeorgia_deactivate() {
-		delete_option('mg-activated');
-		delete_option('mg-options-visited');
-		
-		delete_option('mg-color-scheme');
-		delete_option('mg-footer-note');
+		delete_option('minimalgeorgia-options');
 	}
 	
 	add_action('admin_init', 'minimalgeorgia_firstrun');
@@ -140,7 +162,9 @@
 	add_action('admin_menu', 'minimalgeorgia_options');
 
 	function minimalgeorgia_admin() {
-		update_option('mg-options-visited', true);
+		$options = (array) get_option('minimalgeorgia-options');
+		$options['options-visited'] = true;
+		update_option('minimalgeorgia-options', $options);
 ?>
 <div class="wrap">
 	<div id="icon-themes" class="icon32"><br></div>
@@ -149,28 +173,26 @@
 	<form method="post" action="options.php">
 	<?php wp_nonce_field('update-options'); ?>
 	<?php settings_fields('minimalgeorgia-options'); ?>
-
+	
 		<table class="form-table">
 			<tr valign="top">
 				<th scope="row"><?php _e('Color Scheme', 'minimalgeorgia'); ?></th>
 				<td>
-					<select name="mg-color-scheme">
+					<select name="minimalgeorgia-options[color-scheme]">
 						<?php
-							$options = array('blue' => '', 'red' => '', 'green' => '', 'gray' => '', 'purple' => '');
-							$selected = array(get_option('mg-color-scheme') => 'selected="selected"');
-							$selected = array_merge($options, $selected);
+							$color_schemes = minimalgeorgia_get_valid_color_schemes();
+							foreach ($color_schemes as $value => $caption):
 						?>
-						<option value="blue" <?php echo @$selected['blue']; ?>><?php _e('Sapphire', 'minimalgeorgia'); ?></option>
-						<option value="red" <?php echo @$selected['red']; ?>><?php _e('Inferno', 'minimalgeorgia'); ?></option>
-						<option value="green" <?php echo @$selected['green']; ?>><?php _e('Emeraldo', 'minimalgeorgia'); ?></option>
-						<option value="gray" <?php echo @$selected['gray']; ?>><?php _e('Silent Gray', 'minimalgeorgia'); ?></option>
-						<option value="purple" <?php echo @$selected['purple']; ?>><?php _e('Liquid Purple', 'minimalgeorgia'); ?></option>
+						<option value="<?php echo $value; ?>" <?php selected($value == $options['color-scheme']); ?>><?php echo $caption; ?></option>
+						<?php
+							endforeach;
+						?>
 					</select>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><?php _e('Footer Note', 'minimalgeorgia'); ?></th>
-				<td><textarea rows="5" class="large-text code" name="mg-footer-note"><?php echo get_option('mg-footer-note'); ?></textarea></td>
+				<td><textarea rows="5" class="large-text code" name="minimalgeorgia-options[footer-note]"><?php echo $options['footer-note']; ?></textarea></td>
 			</tr>
 		</table>
 

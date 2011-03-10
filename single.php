@@ -27,7 +27,10 @@ get_header(); ?>
 					</div>
 					<div class="post-meta">
 						<?php wp_link_pages(array('before' => '<p class="page-link">' . __('Pages:', 'minimalgeorgia'), 'after' => '</p>')); ?>
-						<p class="the-tags"><?php the_tags(); ?></p>
+						<p class="the-tags">
+							<?php the_tags(); ?><br />
+							<?php _e('Categories: '); ?> <?php the_category(', '); ?>
+						</p>
 					</div>
 					<?php edit_post_link(__('Edit this post', 'minimalgeorgia'), '<p>', '</p>'); ?>
 					
