@@ -1,8 +1,6 @@
 Minimal Georgia Theme
 
-A sweet multi-color theme filled with Georgia goodness. Two columns, widgets and menus.
-Install the theme and browse to the Theme Options in order to change the color scheme
-and a few other options.
+A sweet multi-color theme filled with Georgia goodness. Two columns, widgets and menus. Install the theme and browse to the Theme Options in order to change the color scheme and a few other options.
 
 Theme features:
 
@@ -14,10 +12,12 @@ Theme features:
  * threaded-comments
  * translation-ready
  * sticky-post
+ * editor-style
 
 Notes & Limitations:
 
  * Primary menu supports up to 6 items (depending on their names) because of the width limitation. If more are added, the extra is not visible.
+ * The Preview script and stylesheet are loaded if you haven't placed any widgets on your sidebar, this results in a Color Schemes block in the sidebar. Drop at least one widget on to your sidebar to get rid of it.
 
 ----
 
