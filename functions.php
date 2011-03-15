@@ -1,71 +1,260 @@
 <?php
 /**
- * Minimal Georgia Functions
+ * Minimal Georgia Theme Functions
  *
- * Lot's of stuff in here, perhaps needs some refactoring into
- * class-style actions and filters. Comment templates, navigation menus
- * theme settings, etc.
+ * There's lots of stuff here, all the functions are defined within
+ * the MinimalGeorgia class which is fired during after_theme_setup
+ * action. If you need access to the $minimalgeorgia object outside
+ * the class declare it as global.
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @version 1.2
- * @since 1.0
+ * @version 1.3
+ * 
  */
 
-	// Set the content width, for videos and photos for defaults.
-	if (!isset( $content_width))
-		$content_width = 640;
+// Set the content width, for videos and photos for defaults
+if (!isset( $content_width))
+	$content_width = 640;
 
-	// Enable localization
-	load_theme_textdomain('minimalgeorgia', TEMPLATEPATH . '/languages');
+/*
+ * Minimal Georgia
+ * 
+ * This is our base class which defines all the theme options, settings,
+ * behaviour, sidebars, etc. The class is initialized into a global
+ * $minimalgeorgia object upon after_theme_setup (see bottom of class).
+ * 
+ */
+class MinimalGeorgia {
+	var $options = array();
+	var $defaults = array();
 	
-	// Register our only sidebar.
-	register_sidebar(array(
-		'before_widget' => '<div class="widget">',
-		'after_widget' => '</div>',
-		'before_title' => '<p class="heading">',
-		'after_title' => '</p>',
-	));
+	/*
+	 * Constructor
+	 * 
+	 * Fired at WordPress after_setup_theme (see add_action at the end 
+	 * of the class), registers the theme capabilities, navigation menus,
+	 * as well as a set of actions and filters used by Minimal Georgia.
+	 * 
+	 * $this->options is used to store all the theme options, while
+	 * $this->defaults holds their default values.
+	 * 
+	 */
+	function __construct() {
+		
+		// Load Minimal Georgia text domain
+		load_theme_textdomain('minimalgeorgia', TEMPLATEPATH . '/languages');
+		
+		// Default options, lower-level ones are added during firstrun
+		$this->defaults = array(
+			'color-scheme' => 'blue',
+			'footer-note' => __('Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings.', 'minimalgeorgia')
+		);
+
+		// Theme supports
+		add_theme_support('automatic-feed-links');		
+		
+		// Editor style for TinyMCE.
+		add_editor_style();
+		
+		// Load options (calls get_option())
+		$this->load_options();
+		
+		// Register our primary navigation (top right) and 404 page links
+		if (function_exists('register_nav_menu')) {
+			add_theme_support('nav_menus');
+			register_nav_menu('primary', __('Primary Navigation Menu', 'minimalgeorgia'));
+			register_nav_menu('menu-404', __('Page Not Found Menu', 'minimalgeorgia'));
+		}
+		
+		/*
+		 * Actions
+		 * 
+		 * Registers sidebars for widgets, registers admin settings, fires
+		 * a firstrun during admin init, registers a theme deactivation hook,
+		 * adds the menu options, fires a welcome notice, footer text in template.
+		 * 
+		 */
+		add_action('widgets_init', array(&$this, 'register_sidebars'));
+		add_action('admin_init', array(&$this, 'register_admin_settings'));
+		add_action('admin_init', array(&$this, 'firstrun'));
+		add_action('switch_theme', array(&$this, 'deactivate'));
+		add_action('admin_menu', array(&$this, 'add_admin_options'));
+		add_action('admin_notices' , array(&$this, 'welcome_notice'));
+		add_action('minimalgeorgia_footer', array(&$this, 'footer_text'));
+		
+		/*
+		 * Filters
+		 * 
+		 * Removes unnecessary CSS from WordPress galleries, adds an
+		 * auto paragraph to footer note, the body class (for color scheme)
+		 * 
+		 */
+		add_filter('gallery_style', array(&$this, 'remove_gallery_css'));
+		add_filter('minimalgeorgia_footer_note', 'wpautop');
+		add_filter('body_class', array(&$this, 'body_class'));
+	}
 	
-	add_filter('minimalgeorgia-footer', 'wpautop');
+	/*
+	 * Load Options
+	 * 
+	 * Fired during theme setup, loads all the options into the $options
+	 * array accessible from all other functions.
+	 * 
+	 */
+	function load_options() {
+		$this->options = (array) get_option('minimalgeorgia-options');
+	}
+	
+	/*
+	 * Save Options
+	 * 
+	 * Calls the update_option function and saves the current $options
+	 * array. Call this after modifying the values of $this->options.
+	 * 
+	 */
+	function update_options() {
+		return update_option('minimalgeorgia-options', $this->options);
+	}
+	
+	/*
+	 * Theme Deactivation
+	 * 
+	 * Remove all the options after theme deactivation. This includes
+	 * footer note, color scheme and all the rest, let's be nice
+	 * and keep the database clean, even if the users didn't like our theme.
+	 * 
+	 */
+	function deactivate() {
+		delete_option('minimalgeorgia-options');
+	}
+	
+	/*
+	 * First Run
+	 * 
+	 * This method is fired on every call, which is why it checks the
+	 * $options array to see if the theme was activated to make sure this
+	 * runs only once. Populates the $options array with defaults and a few
+	 * mandatory options.
+	 * 
+	 */
+	function firstrun() {
+		if (!isset($this->options['activated']) || !$this->options['activated']) {
+			$this->options = $this->defaults;
+			
+			// Mandatory options during first run
+			$this->options['options-visited'] = false;
+			$this->options['activated'] = true;
+
+			// Update the options.
+			$this->update_options();
+		}
+	}
+	
+	/*
+	 * Register Sidebars
+	 * 
+	 * Registers a single right sidebar ready for widgets. No extra
+	 * widgets are defined.
+	 * 
+	 */
+	function register_sidebars() {
+		register_sidebar(array(
+			'before_widget' => '<div class="widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<p class="heading">',
+			'after_title' => '</p>',
+		));
+	}
 	
 	/*
 	 * Valid Color Schemes
 	 * 
-	 * Used for validation and forms output.
+	 * This function returns an array of the available color schemes, where
+	 * an array key is the value used in the database and the HTML layout,
+	 * and value is used for captions. The function is used for theme settings
+	 * page as well as options validation. Default is blue.
+	 * 
 	 */
-	function minimalgeorgia_get_valid_color_schemes() {
+	function get_valid_color_schemes() {
 		return array(
 			'red' => __('Inferno', 'minimalgeorgia'),
-			'blue' => __('Saphirre', 'minimalgeorgia'),
+			'blue' => __('Sapphire', 'minimalgeorgia'),
 			'green' => __('Emeraldo', 'minimalgeorgia'),
 			'gray' => __('Silent Gray', 'minimalgeorgia'),
 			'purple' => __('Liquid Purple', 'minimalgeorgia')
 		);
 	}
 	
-	// Setup the Minimal Georgia theme
-	function minimalgeorgia_setup() {
-		add_theme_support('automatic-feed-links');		
-		
-		// Register our primary navigation (top right) and 404 page links.
-		if (function_exists('register_nav_menu')) {
-			add_theme_support('nav_menus');
-			register_nav_menu('primary', __('Primary Navigation Menu', 'minimalgeorgia'));
-			register_nav_menu('menu-404', __('Page Not Found Menu', 'minimalgeorgia'));
-		}
-
-	}
-	add_action('after_setup_theme', 'minimalgeorgia_setup');
-
-	// Non-relevant stylesheets for galleries, remove them.
-	function minimalgeorgia_remove_gallery_css($css) {
+	/*
+	 * Gallery CSS Fix
+	 * 
+	 * Wordpress adds a style block when rendering the gallery. Since our
+	 * gallery is styled in our own stylesheet, and since W3C does not
+	 * permit style tags that are not within the head tag, we get rid of
+	 * them via a simple preg_replace.
+	 * 
+	 */
+	function remove_gallery_css($css) {
 		return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 	}
-	add_filter('gallery_style', 'minimalgeorgia_remove_gallery_css');
-
-	// We'll use this function as a walker-talker throughout comments and pings.
-	function minimalgeorgia_comment($comment, $args, $depth) {
+	
+	/*
+	 * Register Settings
+	 * 
+	 * Fired during admin_init, this function registers the settings used
+	 * in the Theme Options section, as well as attaches a validator to
+	 * clean up the incoming data.
+	 * 
+	 */
+	function register_admin_settings() {
+		register_setting('minimalgeorgia-options', 'minimalgeorgia-options', array(&$this, 'validate_options'));
+		
+		// Settings fields and sections
+		add_settings_section('section_general', 'General Settings', array(&$this, 'section_general'), 'minimalgeorgia-options');
+		add_settings_field('color-scheme', 'Color Scheme', array(&$this, 'setting_color_scheme'), 'minimalgeorgia-options', 'section_general');
+		add_settings_field('footer-note', 'Footer Note', array(&$this, 'setting_footer_note'), 'minimalgeorgia-options', 'section_general');
+	}
+	
+	/*
+	 * Options Validation
+	 * 
+	 * This function is used to validate the incoming options, mostly from
+	 * the Theme Options admin page. We make sure that the 'activated' array
+	 * is untouched and then verify the rest of the options.
+	 * 
+	 */
+	function validate_options($options) {
+		// Mandatory.
+		$options['activated'] = true;
+		
+		// Theme options.
+		$options['color-scheme'] = array_key_exists($options['color-scheme'], $this->get_valid_color_schemes()) ? $options['color-scheme'] : 'blue';
+		$options['footer-note'] = trim(strip_tags($options['footer-note'], '<a><b><strong><em><ul><ol><li><div><span>'));
+		
+		return $options;
+	}
+	
+	/*
+	 * Add Menu Options
+	 * 
+	 * Registers a Theme Options page that appears under the Appearance
+	 * menu in the WordPress dashboard. Uses the theme_options to render
+	 * the page contents, requires edit_theme_options capabilitites.
+	 *
+	 */
+	function add_admin_options() {
+		add_theme_page(__('Theme Options', 'minimalgeorgia'), __('Theme Options', 'minimalgeorgia'), 'edit_theme_options', 'minimalgeorgia-settings', array(&$this, 'theme_options'));
+	}
+	
+	/*
+	 * Comment Walker
+	 * 
+	 * This is used in the comments template, does the comments rendering.
+	 * Taken from Twenty Ten and localized. Nothing much here.
+	 * 
+	 */
+	function comment_walker($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
 		switch ($comment->comment_type):
 			case '':
@@ -106,101 +295,134 @@
 				break;
 		endswitch;
 	}
-
-	// Add a welcome notice for new users.
-	function minimalgeorgia_welcome_notice() {
-		$options = get_option('minimalgeorgia-options');
-		if (!isset($options['options-visited']) || !$options['options-visited'])
-			echo "<div class='update-nag'>" . __("Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!") . "</div>";
-	}
-	add_action('admin_notices' , 'minimalgeorgia_welcome_notice');
-
-	// Theme activation/deactivation hooks
-	function minimalgeorgia_admin_init() {
-		register_setting('minimalgeorgia-options', 'minimalgeorgia-options', 'minimalgeorgia_validate_options');
-		// register_setting('minimalgeorgia-options', 'mg-footer-note', 'minimalgeorgia_sanitize_footer_note');
-	}
-	add_action('admin_init','minimalgeorgia_admin_init');
 	
-	function minimalgeorgia_validate_options($options) {
-		// Mandatory.
-		$options['options-visited'] = true;
-		$options['activated'] = true;
+	/*
+	 * Theme Options
+	 * 
+	 * This is the function that renders the Theme Options page under
+	 * the Appearance menu in the admin section. Upon visiting this the
+	 * first time we make sure that a state (options-visited) is saved
+	 * to our options array.
+	 * 
+	 * The rest is handled by the Settings API and some HTML magic.
+	 * 
+	 */
+	function theme_options() {
 		
-		// Theme options.
-		$options['color-scheme'] = array_key_exists($options['color-scheme'], minimalgeorgia_get_valid_color_schemes()) ? $options['color-scheme'] : 'blue';
-		$options['footer-note'] = trim(strip_tags($options['footer-note'], '<a><b><strong><em><ul><ol><li><div><span>'));
-		
-		return $options;
-	}
-	
-	function minimalgeorgia_firstrun() {
-		$options = get_option('minimalgeorgia-options');
-		if (!isset($options['activated']) || !$options['activated']) {
-			// General settings
-			$options['color-scheme'] = 'blue';
-			$options['footer-note'] = __('Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings.', 'minimalgeorgia');
-			$options['options-visited'] = false;
-			$options['activated'] = true;
-
-			// Update the options.
-			update_option('minimalgeorgia-options', $options);
+		if (!isset($this->options['options-visited']) || !$this->options['options-visited']) {
+			$this->options['options-visited'] = true;
+			$this->update_options();
 		}
-	}
-	
-	function minimalgeorgia_deactivate() {
-		delete_option('minimalgeorgia-options');
-	}
-	
-	add_action('admin_init', 'minimalgeorgia_firstrun');
-	add_action('switch_theme', 'minimalgeorgia_deactivate');
-
-	// Register a theme settings page.
-	function minimalgeorgia_options() {
-		add_theme_page(__('Theme Options', 'minimalgeorgia'), __('Theme Options', 'minimalgeorgia'), 'edit_theme_options', 'minimalgeorgia-settings', 'minimalgeorgia_admin');
-	}
-	add_action('admin_menu', 'minimalgeorgia_options');
-
-	function minimalgeorgia_admin() {
-		$options = (array) get_option('minimalgeorgia-options');
-		$options['options-visited'] = true;
-		update_option('minimalgeorgia-options', $options);
 ?>
 <div class="wrap">
 	<div id="icon-themes" class="icon32"><br></div>
 	<h2><?php _e('Minimal Georgia Options', 'minimalgeorgia'); ?></h2>
 
 	<form method="post" action="options.php">
-	<?php wp_nonce_field('update-options'); ?>
-	<?php settings_fields('minimalgeorgia-options'); ?>
-	
-		<table class="form-table">
-			<tr valign="top">
-				<th scope="row"><?php _e('Color Scheme', 'minimalgeorgia'); ?></th>
-				<td>
-					<select name="minimalgeorgia-options[color-scheme]">
-						<?php
-							$color_schemes = minimalgeorgia_get_valid_color_schemes();
-							foreach ($color_schemes as $value => $caption):
-						?>
-						<option value="<?php echo $value; ?>" <?php selected($value == $options['color-scheme']); ?>><?php echo $caption; ?></option>
-						<?php
-							endforeach;
-						?>
-					</select>
-				</td>
-			</tr>
-			<tr valign="top">
-				<th scope="row"><?php _e('Footer Note', 'minimalgeorgia'); ?></th>
-				<td><textarea rows="5" class="large-text code" name="minimalgeorgia-options[footer-note]"><?php echo $options['footer-note']; ?></textarea></td>
-			</tr>
-		</table>
-
-		<input type="hidden" name="action" value="update" />
+		<?php wp_nonce_field('update-options'); ?>
+		<?php settings_fields('minimalgeorgia-options'); ?>
+		<?php do_settings_sections('minimalgeorgia-options'); ?>
 		<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'minimalgeorgia') ?>" />
+			<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
 		</p>
 	</form>
 </div>
 <?php
 	}
+	
+	/*
+	 * Welcome Notice
+	 * 
+	 * This notice is displayed to new users that have just activated the
+	 * Minimal Georgia theme. It displays a message on top saying that we've
+	 * got options with a link to the Theme Options page. As soon as that page
+	 * has been visited at least once, the message no longer bothers the visitor.
+	 * 
+	 */
+	function welcome_notice() {
+		if ($_REQUEST['page'] !== 'minimalgeorgia-settings')
+			if (!isset($this->options['options-visited']) || !$this->options['options-visited'])
+				echo "<div class='update-nag'>" . __("Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!") . "</div>";
+	}
+	
+	/*
+	 * Body Class
+	 * 
+	 * Fired during the body_class() filter, appends the Minimal
+	 * Georgia color scheme. Styles defined in the theme style.css
+	 *
+	 */
+	function body_class($classes) {
+		$classes[] = 'mg-' . $this->options['color-scheme'];
+		return $classes;
+	}
+	 
+	 /*
+	  * Footer Text
+	  * 
+	  * Fired during minimalgeorgia_footer action in footer.php, formats
+	  * the author credit link and echoes the footer-note set in the
+	  * theme options by passing it through the footer note filter
+	  * (which adds auto paragraphs).
+	  *
+	  */
+	function footer_text() {
+		$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', 'Minimal Georgia', '<a title="Konstantin" href="http://kovshenin.com">Konstantin</a>');
+		echo apply_filters('minimalgeorgia_footer_note', $this->options['footer-note'] . $author_credit);
+	}
+	 
+	
+	/*
+	 * Settings: General Section
+	 * 
+	 * Used via the Settings API to output the description of the
+	 * general settings under Theme Options in Appearance.
+	 * 
+	 */
+	function section_general() {
+		_e('These settings affect the general look of your theme.', 'minimalgeorgia');
+	}
+	
+	/*
+	 * Settings: Color Scheme
+	 * 
+	 * Outputs a select box with available color schemes for the Theme
+	 * Options page, as well as sets the selected color scheme as defined
+	 * in $options.
+	 * 
+	 */
+	function setting_color_scheme() {
+	?>
+		<select name="minimalgeorgia-options[color-scheme]">
+			<?php
+				$color_schemes = $this->get_valid_color_schemes();
+				foreach ($color_schemes as $value => $caption):
+			?>
+			<option value="<?php echo $value; ?>" <?php selected($value == $this->options['color-scheme']); ?>><?php echo $caption; ?></option>
+			<?php
+				endforeach;
+			?>
+		</select><br />
+		<span class="description"><?php _e('Browse to your home page to see the new color scheme in action.', 'minimalgeorgia'); ?></span>
+	<?php
+	}
+	
+	/*
+	 * Settings: Footer Note
+	 * 
+	 * Outputs a textarea for the footer note under Theme Options in
+	 * Appearance. Populates the textarea with the currently set
+	 * footer note from the $options array.
+	 * 
+	 */
+	function setting_footer_note() {
+	?>
+		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[footer-note]"><?php echo $this->options['footer-note']; ?></textarea><br />
+		<span class="description"><?php _e('This is the text that appears at the bottom of every page, right next to the copyright notice.', 'minimalgeorgia'); ?></span>
+	<?php
+	}
+	 
+};
+
+// Initialize the above class after theme setup
+add_action('after_setup_theme', create_function('', 'global $minimalgeorgia; $minimalgeorgia = new MinimalGeorgia();'));

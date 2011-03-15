@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimal Georgia\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-02 15:54+0300\n"
+"POT-Creation-Date: 2011-03-15 13:26+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
 "Language-Team: Konstantin Kovshenin <kovshenin@gmail.com>\n"
@@ -44,48 +44,40 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../search.php:47
-#: ../single.php:45
+#: ../single.php:48
 #: ../archive.php:56
 #: ../index.php:42
 msgid "&larr; Older posts"
 msgstr "&larr; Older posts"
 
 #: ../search.php:48
-#: ../single.php:46
+#: ../single.php:49
 #: ../archive.php:57
 #: ../index.php:43
 msgid "Newer posts &rarr;"
 msgstr "Newer posts &rarr;"
 
-#: ../sidebar.php:18
-msgid "Search for:"
-msgstr "Search for:"
-
 #: ../sidebar.php:20
-msgid "Search"
-msgstr "Search"
-
-#: ../sidebar.php:26
 msgid "Hey There!"
 msgstr "Здрямс!"
 
-#: ../sidebar.php:27
+#: ../sidebar.php:21
 msgid "Welcome to the Minimal Georgia theme. You're seeing this text because you haven't configured your widgets. Browse to the Widgets section in your admin panel."
 msgstr "Добро пожаловать в Minimal Georgia. Вы видите данный текст поскольку вы не настроили ваши виджеты. Зайдите в панель администратора и выберите Виджеты в меню слева."
 
-#: ../sidebar.php:28
+#: ../sidebar.php:22
 msgid "About the theme &raquo;"
 msgstr "Информация о теме &raquo;"
 
-#: ../sidebar.php:32
+#: ../sidebar.php:26
 msgid "Archives"
 msgstr "Архивы"
 
-#: ../sidebar.php:44
+#: ../sidebar.php:33
 msgid "Categories"
 msgstr "Категории"
 
-#: ../sidebar.php:55
+#: ../sidebar.php:40
 msgid "Blogroll"
 msgstr "Ссылки"
 
@@ -96,16 +88,15 @@ msgid "Pages:"
 msgstr "Страницы:"
 
 #: ../single.php:32
+msgid "Categories: "
+msgstr "Категории:"
+
+#: ../single.php:35
 #: ../index.php:31
 msgid "Edit this post"
 msgstr "Редактировать запись"
 
-#: ../footer.php:13
-#, php-format
-msgid "Powered by %1$s running %2$s by %3$s"
-msgstr "Работает на базе %1$s с темой %2$s. Спасибо %3$s."
-
-#: ../footer.php:19
+#: ../footer.php:20
 msgid "Copyright"
 msgstr "Копирайт"
 
@@ -163,87 +154,109 @@ msgstr "Архивы по годам: <span>%s</span>"
 msgid "Blog Archives"
 msgstr "Архивы"
 
-#: ../functions.php:38
+#: ../functions.php:50
+msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
+msgstr "Да, вы можете написать сюда абсолютно любой текст. Пройдите в панель администратора и выберите Настройки темы в разделе Внешний вид."
+
+#: ../functions.php:62
 msgid "Primary Navigation Menu"
 msgstr "Основное меню"
 
-#: ../functions.php:39
+#: ../functions.php:63
 msgid "Page Not Found Menu"
 msgstr "Меню \"Не найдено\""
 
-#: ../functions.php:61
+#: ../functions.php:177
+msgid "Inferno"
+msgstr "Красный"
+
+#: ../functions.php:178
+msgid "Sapphire"
+msgstr "Синий"
+
+#: ../functions.php:179
+msgid "Emeraldo"
+msgstr "Зелёный"
+
+#: ../functions.php:180
+msgid "Silent Gray"
+msgstr "Серый"
+
+#: ../functions.php:181
+msgid "Liquid Purple"
+msgstr "Фиолетовый"
+
+#: ../functions.php:243
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: ../functions.php:262
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">сказал(а):</span>"
 
-#: ../functions.php:64
+#: ../functions.php:265
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарии ожидает модерации."
 
-#: ../functions.php:71
+#: ../functions.php:272
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s в %2$s"
 
-#: ../functions.php:71
-#: ../functions.php:88
+#: ../functions.php:272
+#: ../functions.php:289
 msgid "(Edit)"
 msgstr "(редактировать)"
 
-#: ../functions.php:88
+#: ../functions.php:289
 msgid "Pingback:"
 msgstr "Пинг:"
 
-#: ../functions.php:97
-msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
-msgstr "Благодарим за использование темы <strong>Minimal Georgia</strong>. Теперь пройдите в раздел <a href='themes.php?page=minimalgeorgia-settings'>Настройки темы</a> и настройте её по вашему вкусу!"
-
-#: ../functions.php:113
-msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
-msgstr "Да, вы можете написать сюда абсолютно любой текст. Пройдите в панель администратора и выберите Настройки темы в разделе Внешний вид."
-
-#: ../functions.php:134
-msgid "Theme Options"
-msgstr "Настройки темы"
-
-#: ../functions.php:143
+#: ../functions.php:315
 msgid "Minimal Georgia Options"
 msgstr "Настройки темы Minimal Georgia"
 
-#: ../functions.php:151
+#: ../functions.php:327
 msgid "Color Scheme"
 msgstr "Цветовая схема"
 
-#: ../functions.php:157
-msgid "Sapphire"
-msgstr "Синий"
-
-#: ../functions.php:158
-msgid "Inferno"
-msgstr "Красный"
-
-#: ../functions.php:159
-msgid "Emeraldo"
-msgstr "Зелёный"
-
-#: ../functions.php:160
-msgid "Silent Gray"
-msgstr "Серый"
-
-#: ../functions.php:161
-msgid "Liquid Purple"
-msgstr "Фиолетовый"
-
-#: ../functions.php:166
+#: ../functions.php:342
 msgid "Footer Note"
 msgstr "Надпись в подвале"
 
-#: ../functions.php:173
+#: ../functions.php:349
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: ../header.php:30
+#: ../functions.php:368
+msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
+msgstr "Благодарим за использование темы <strong>Minimal Georgia</strong>. Теперь пройдите в раздел <a href='themes.php?page=minimalgeorgia-settings'>Настройки темы</a> и настройте её по вашему вкусу!"
+
+#: ../functions.php:393
+#, php-format
+msgid "Powered by %1$s running %2$s by %3$s"
+msgstr "Работает на базе %1$s с темой %2$s. Спасибо %3$s."
+
+#: ../functions.php:406
+msgid "These settings affect the general look of your theme."
+msgstr "Эти настройки влияют на внешний вид вашего сайта."
+
+#: ../functions.php:429
+msgid "Browse to your home page to see the new color scheme in action."
+msgstr "Следуйте на главную страницу, чтобы посмотреть вашу новую цветовую схему в действии."
+
+#: ../functions.php:444
+msgid "This is the text that appears at the bottom of every page, right next to the copyright notice."
+msgstr "Это текст который появляется в самом низу каждой страницы."
+
+#: ../header.php:32
 #, php-format
 msgid "Page %s"
 msgstr "Страница %s"
+
+#~ msgid "Search for:"
+#~ msgstr "Search for:"
+#~ msgid "Search"
+#~ msgstr "Search"
 

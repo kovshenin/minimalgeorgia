@@ -8,7 +8,7 @@
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @since 1.0
+ * @version 1.3
  */
  
 get_header(); ?>

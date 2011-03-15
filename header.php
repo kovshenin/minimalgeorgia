@@ -3,16 +3,16 @@
  * The Header Area
  *
  * Appropriate stylesheets, wp_head and color-scheme selection
- * using the body class. The primary navigation menu is present
+ * using the body class. The body_class is hooked in functions.php
+ * to output the color class. The primary navigation menu is present
  * here.
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @since 1.0
+ * @version 1.3
  */
  
- global $mg_options;
- $mg_options = get_option('minimalgeorgia-options');
+ global $mg;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,7 +41,7 @@
 	<?php if (is_singular() && get_option('thread_comments')) { wp_enqueue_script('comment-reply'); } ?>
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class('mg-' . $mg_options['color-scheme']); ?>>
+<body <?php body_class(); ?>>
 	<div class="header-fill">
 		<div class="container_8 header">
 			<div class="grid_1">

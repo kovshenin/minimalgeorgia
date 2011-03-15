@@ -2,15 +2,17 @@
 /**
  * The template for displaying Comments.
  *
- * The area of the page that contains both current comments
- * and the comment form.  The actual display of comments is
- * handled by a callback to minimalgeorgia_comment which is
- * located in the functions.php file.
+ * The area of the page that contains both current comments and the comment 
+ * form. The actual display of comments is handled by a callback to 
+ * comments_walker which is located in the functions.php file (inside
+ * the MinimalGeorgia base class).
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @since 1.0
+ * @version 1.3
  */
+ 
+global $minimalgeorgia;
 ?>
 
 			<div id="comments">
@@ -45,7 +47,7 @@
 
 			<ol class="commentlist">
 				<?php
-					wp_list_comments(array('callback' => 'minimalgeorgia_comment'));
+					wp_list_comments(array('callback' => array(&$minimalgeorgia, 'comment_walker')));
 				?>
 			</ol>
 

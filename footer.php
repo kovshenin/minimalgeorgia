@@ -8,10 +8,10 @@
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @since 1.0
+ * @version 1.3
  */
-	global $mg_options;
-	$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', 'Minimal Georgia', '<a title="Konstantin" href="http://kovshenin.com">Konstantin</a>');
+
+	
 ?>
 	</div>
 	<div class="clear"></div>
@@ -20,7 +20,7 @@
 			<p><?php _e('Copyright', 'minimalgeorgia'); ?> &copy; <?php echo date('Y'); ?></p>
 		</div>
 		<div class="grid_5">
-			<?php echo apply_filters('minimalgeorgia-footer', $mg_options['footer-note'] . $author_credit); ?>
+			<?php do_action('minimalgeorgia_footer'); ?>
 		</div>
 	</div>
 	<div class="clear"></div>
