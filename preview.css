@@ -1,0 +1,43 @@
+/*
+ * This stylesheet is included only for previewing Minimal Georgia
+ * color schemes.
+ * 
+ * @version 1.3
+ */
+
+/* Color Schemes Selector for Preview */
+.color-scheme-selector a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: red;
+	text-indent: -3000px;
+	opacity: 0.9;
+	-moz-box-shadow: 1px 1px 2px #aaa;
+	-webkit-box-shadow: 1px 1px 2px #aaa;
+	box-shadow: 1px 1px 2px #aaa;
+}
+
+.color-scheme-selector a:hover {
+	opacity: 1;
+}
+
+.color-scheme-selector a[data="red"] {
+	background-image: url(images/header-fill-red.png);
+}
+
+.color-scheme-selector a[data="blue"] {
+	background-image: url(images/header-fill.png);
+}
+
+.color-scheme-selector a[data="purple"] {
+	background-image: url(images/header-fill-purple.png);
+}
+
+.color-scheme-selector a[data="green"] {
+	background-image: url(images/header-fill-green.png);
+}
+
+.color-scheme-selector a[data="gray"] {
+	background-image: url(images/header-fill-gray.png);
+}

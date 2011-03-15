@@ -72,7 +72,8 @@ class MinimalGeorgia {
 		 * 
 		 * Registers sidebars for widgets, registers admin settings, fires
 		 * a firstrun during admin init, registers a theme deactivation hook,
-		 * adds the menu options, fires a welcome notice, footer text in template.
+		 * adds the menu options, fires a welcome notice, footer text in template,
+		 * color scheme preview scripts (sidebar).
 		 * 
 		 */
 		add_action('widgets_init', array(&$this, 'register_sidebars'));
@@ -82,6 +83,7 @@ class MinimalGeorgia {
 		add_action('admin_menu', array(&$this, 'add_admin_options'));
 		add_action('admin_notices' , array(&$this, 'welcome_notice'));
 		add_action('minimalgeorgia_footer', array(&$this, 'footer_text'));
+		add_action('wp_loaded', array(&$this, 'colorscheme_preview_scripts'));
 		
 		/*
 		 * Filters
@@ -93,6 +95,21 @@ class MinimalGeorgia {
 		add_filter('gallery_style', array(&$this, 'remove_gallery_css'));
 		add_filter('minimalgeorgia_footer_note', 'wpautop');
 		add_filter('body_class', array(&$this, 'body_class'));
+	}
+	
+	/*
+	 * Color Scheme Preview
+	 * 
+	 * This is fired during wp_loaded and includes the Minimal Georgia
+	 * color scheme preview script/style if no sidebar widgets have 
+	 * been defined.
+	 * 
+	 */
+	function colorscheme_preview_scripts() {
+		if (!is_dynamic_sidebar()) {
+			wp_enqueue_script('minimalgeorgia-preview', get_stylesheet_directory_uri() . '/js/preview.js', array('jquery'));
+			wp_enqueue_style('minimalgeorgia-preview', get_stylesheet_directory_uri() . '/preview.css');
+		}
 	}
 	
 	/*
