@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimal Georgia\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-02 15:54+0300\n"
+"POT-Creation-Date: 2011-03-15 16:31+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
 "Language-Team: Konstantin Kovshenin <kovshenin@gmail.com>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../search.php:19
+#: ../minimal-georgia/search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Search Results for: %s"
@@ -26,95 +27,144 @@ msgstr "Search Results for: %s"
 #: ../page.php:26
 #: ../archive.php:44
 #: ../index.php:28
+#: ../minimal-georgia/search.php:35
+#: ../minimal-georgia/single.php:26
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../search.php:47
-#: ../single.php:45
+#: ../single.php:48
 #: ../archive.php:56
 #: ../index.php:42
+#: ../minimal-georgia/search.php:47
+#: ../minimal-georgia/single.php:48
 msgid "&larr; Older posts"
 msgstr "&larr; Older posts"
 
 #: ../search.php:48
-#: ../single.php:46
+#: ../single.php:49
 #: ../archive.php:57
 #: ../index.php:43
+#: ../minimal-georgia/search.php:48
+#: ../minimal-georgia/single.php:49
 msgid "Newer posts &rarr;"
 msgstr "Newer posts &rarr;"
 
-#: ../sidebar.php:18
-msgid "Search for:"
-msgstr "Search for:"
-
 #: ../sidebar.php:20
-msgid "Search"
-msgstr "Search"
+#: ../minimal-georgia/sidebar.php:20
+msgid "Color Schemes"
+msgstr "Color Schemes"
+
+#: ../sidebar.php:22
+#: ../functions.php:198
+#: ../minimal-georgia/sidebar.php:22
+msgid "Inferno"
+msgstr "Inferno"
+
+#: ../sidebar.php:23
+#: ../functions.php:199
+#: ../minimal-georgia/sidebar.php:23
+msgid "Sapphire"
+msgstr "Sapphire"
+
+#: ../sidebar.php:24
+#: ../functions.php:200
+#: ../minimal-georgia/sidebar.php:24
+msgid "Emeraldo"
+msgstr "Emeraldo"
+
+#: ../sidebar.php:25
+#: ../functions.php:201
+#: ../minimal-georgia/sidebar.php:25
+msgid "Silent Gray"
+msgstr "Silent Gray"
 
 #: ../sidebar.php:26
+#: ../functions.php:202
+#: ../minimal-georgia/sidebar.php:26
+msgid "Liquid Purple"
+msgstr "Liquid Purple"
+
+#: ../sidebar.php:31
+#: ../minimal-georgia/sidebar.php:31
 msgid "Hey There!"
 msgstr "Hey There!"
 
-#: ../sidebar.php:27
+#: ../sidebar.php:32
+#: ../minimal-georgia/sidebar.php:32
 msgid "Welcome to the Minimal Georgia theme. You're seeing this text because you haven't configured your widgets. Browse to the Widgets section in your admin panel."
 msgstr "Welcome to the Minimal Georgia theme. You're seeing this text because you haven't configured your widgets. Browse to the Widgets section in your admin panel."
 
-#: ../sidebar.php:28
+#: ../sidebar.php:33
+#: ../minimal-georgia/sidebar.php:33
 msgid "About the theme &raquo;"
 msgstr "About the theme &raquo;"
 
-#: ../sidebar.php:32
+#: ../sidebar.php:37
+#: ../minimal-georgia/sidebar.php:37
 msgid "Archives"
 msgstr "Archives"
 
 #: ../sidebar.php:44
+#: ../minimal-georgia/sidebar.php:44
 msgid "Categories"
 msgstr "Categories"
 
-#: ../sidebar.php:55
+#: ../sidebar.php:51
+#: ../minimal-georgia/sidebar.php:51
 msgid "Blogroll"
 msgstr "Blogroll"
 
 #: ../single.php:29
 #: ../page.php:28
 #: ../index.php:30
+#: ../minimal-georgia/single.php:29
 msgid "Pages:"
 msgstr "Pages:"
 
 #: ../single.php:32
+#: ../minimal-georgia/single.php:32
+msgid "Categories: "
+msgstr "Categories: "
+
+#: ../single.php:35
 #: ../index.php:31
+#: ../minimal-georgia/single.php:35
 msgid "Edit this post"
 msgstr "Edit this post"
 
-#: ../footer.php:13
-#, php-format
-msgid "Powered by %1$s running %2$s by %3$s"
-msgstr "Powered by %1$s running %2$s by %3$s"
-
-#: ../footer.php:19
+#: ../footer.php:20
+#: ../minimal-georgia/footer.php:20
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../comments.php:18
+#: ../comments.php:20
+#: ../minimal-georgia/comments.php:20
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "This post is password protected. Enter the password to view any comments."
 
-#: ../comments.php:35
+#: ../comments.php:37
+#: ../minimal-georgia/comments.php:37
 #, php-format
 msgid "One Response to %2$s"
 msgstr "One Response to %2$s"
 
-#: ../comments.php:41
-#: ../comments.php:54
+#: ../comments.php:43
+#: ../comments.php:56
+#: ../minimal-georgia/comments.php:43
+#: ../minimal-georgia/comments.php:56
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Older Comments"
 
-#: ../comments.php:42
-#: ../comments.php:55
+#: ../comments.php:44
+#: ../comments.php:57
+#: ../minimal-georgia/comments.php:44
+#: ../minimal-georgia/comments.php:57
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../comments.php:66
+#: ../comments.php:68
+#: ../minimal-georgia/comments.php:68
 msgid "Comments are closed."
 msgstr "Comments are closed."
 
@@ -149,87 +199,81 @@ msgstr "Yearly Archives: <span>%s</span>"
 msgid "Blog Archives"
 msgstr "Blog Archives"
 
-#: ../functions.php:38
+#: ../functions.php:51
+msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
+msgstr "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
+
+#: ../functions.php:66
 msgid "Primary Navigation Menu"
 msgstr "Primary Navigation Menu"
 
-#: ../functions.php:39
+#: ../functions.php:67
 msgid "Page Not Found Menu"
 msgstr "Page Not Found Menu"
 
-#: ../functions.php:61
+#: ../functions.php:264
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#: ../functions.php:283
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">says:</span>"
 
-#: ../functions.php:64
+#: ../functions.php:286
 msgid "Your comment is awaiting moderation."
 msgstr "Your comment is awaiting moderation."
 
-#: ../functions.php:71
+#: ../functions.php:293
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: ../functions.php:71
-#: ../functions.php:88
+#: ../functions.php:293
+#: ../functions.php:310
 msgid "(Edit)"
 msgstr "(Edit)"
 
-#: ../functions.php:88
+#: ../functions.php:310
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:97
-msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
-msgstr "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
-
-#: ../functions.php:113
-msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
-msgstr "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
-
-#: ../functions.php:134
-msgid "Theme Options"
-msgstr "Theme Options"
-
-#: ../functions.php:143
+#: ../functions.php:336
 msgid "Minimal Georgia Options"
 msgstr "Minimal Georgia Options"
 
-#: ../functions.php:151
-msgid "Color Scheme"
-msgstr "Color Scheme"
+#: ../functions.php:362
+msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
+msgstr "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
 
-#: ../functions.php:157
-msgid "Sapphire"
-msgstr "Sapphire"
+#: ../functions.php:387
+#, php-format
+msgid "Powered by %1$s running %2$s by %3$s"
+msgstr "Powered by %1$s running %2$s by %3$s"
 
-#: ../functions.php:158
-msgid "Inferno"
-msgstr "Inferno"
+#: ../functions.php:400
+msgid "These settings affect the general look of your theme."
+msgstr "These settings affect the general look of your theme."
 
-#: ../functions.php:159
-msgid "Emeraldo"
-msgstr "Emeraldo"
+#: ../functions.php:423
+msgid "Browse to your home page to see the new color scheme in action."
+msgstr "Browse to your home page to see the new color scheme in action."
 
-#: ../functions.php:160
-msgid "Silent Gray"
-msgstr "Silent Gray"
+#: ../functions.php:438
+msgid "This is the text that appears at the bottom of every page, right next to the copyright notice."
+msgstr "This is the text that appears at the bottom of every page, right next to the copyright notice."
 
-#: ../functions.php:161
-msgid "Liquid Purple"
-msgstr "Liquid Purple"
-
-#: ../functions.php:166
-msgid "Footer Note"
-msgstr "Footer Note"
-
-#: ../functions.php:173
-msgid "Save Changes"
-msgstr "Save Changes"
-
-#: ../header.php:30
+#: ../header.php:32
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
+
+#~ msgid "Search for:"
+#~ msgstr "Search for:"
+#~ msgid "Search"
+#~ msgstr "Search"
+#~ msgid "Footer Note"
+#~ msgstr "Footer Note"
+#~ msgid "Save Changes"
+#~ msgstr "Save Changes"
 
