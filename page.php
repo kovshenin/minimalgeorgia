@@ -20,7 +20,7 @@ get_header(); ?>
 				</div>
 				<div class="grid_5 omega content-container">
 					<?php if (get_the_title()): ?>
-					<h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink to %s', 'minimalgeorgia'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+					<h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink to %s', 'minimalgeorgia'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					<?php endif; ?>
 					<div class="post-content <?php if (!get_the_title()) echo 'no-title'; ?>">
 						<?php the_content(__('Continue reading <span class="meta-nav">&rarr;</span>', 'minimalgeorgia') ); ?>
