@@ -507,6 +507,28 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
+/* Forms */
+.post-content input[type="text"],
+.post-content input[type="password"],
+.post-content textarea {
+	font-size: 12pt;
+	line-height: 18pt;
+	padding: 4px;
+	border-radius: 4px 4px;
+	border: solid 1px #ddd;
+	width: 50%;
+}
+
+.post-content input[type=text]:focus,
+.post-content input[type="password"]:focus,
+.post-content textarea:focus {
+	border-color: #3F81C3;
+}
+
+.post-content textarea {
+	height: 5em;
+}
+
 
 /* Smiley */
 img.wp-smiley {
@@ -605,10 +627,6 @@ img.avatar {
 	border: solid 1px #ddd;
 }
 
-#respond input[type=text] {
-	
-}
-
 #respond textarea:focus, 
 #respond input[type=text]:focus, 
 #s:focus {
@@ -643,8 +661,13 @@ img.avatar {
 	line-height: 18px;
 }
 
-#respond .form-submit input {
+#respond .form-submit input, .post-content input[type="submit"] {
 	font-size: 13pt;
+	padding: 4px 8px;
+}
+
+.post-content input[type="submit"] {
+	margin-top: 8px;
 }
 
 /* Tags */
