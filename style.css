@@ -663,3 +663,10 @@ img.avatar {
 	margin-bottom: 24px;
 	padding: 16px 16px 0 16px;
 }
+
+hr {
+	border: none;
+	height: 1px;
+	background: #ddd;
+	margin: 10px 10px;
+}

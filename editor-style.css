@@ -34,13 +34,15 @@ body, input, textarea {
 	font-size: 13pt;
 	line-height: 16pt;
 }
+
 hr {
-	background-color: #e7e7e7;
-	border:0;
+	border: none;
 	height: 1px;
-	margin-bottom: 18px;
-	clear:both;
+	background: #ddd;
+	margin: 10px 10px;
 }
+
+
 /* Text elements */
 p {
 	margin-bottom: 10px;
