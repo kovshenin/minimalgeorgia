@@ -11,8 +11,7 @@
  * @subpackage Minimal Georgia
  * @version 1.3
  */
- 
- global $mg;
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
