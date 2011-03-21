@@ -1,11 +1,11 @@
 /*
-Theme Name: Twenty Ten
+Theme Name: Minimal Georgia
 */
 /*
 Used to style the TinyMCE editor.
 */
 html .mceContentBody {
-	max-width:640px;
+	max-width:740px;
 }
 * {
 	font-family: Georgia, serif;
@@ -107,7 +107,8 @@ table th {
 	text-align: left;
 	padding: 8px;
 	font-weight: normal;
-	border-bottom: solid 1px #ddd;
+	background: #4178ae;
+	color: white;
 }
 
 dl {
