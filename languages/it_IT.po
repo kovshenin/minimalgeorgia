@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimal Georgia in italiano\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-21 13:38+0300\n"
+"POT-Creation-Date: 2011-03-21 19:49+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Gianni Diurno (aka gidibao) <gidibao[at]gmail[dot]com>\n"
+"Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
 "Language-Team: Gianni Diurno | gidibao.net\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../search.php:19
+#: ../minimal-georgia/search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
@@ -28,6 +29,8 @@ msgstr "Risultati della ricerca per: %s"
 #: ../page.php:26
 #: ../archive.php:44
 #: ../index.php:28
+#: ../minimal-georgia/search.php:35
+#: ../minimal-georgia/single.php:26
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Prosegui la lettura <span class=\"meta-nav\">&rarr;</span>"
 
@@ -35,6 +38,8 @@ msgstr "Prosegui la lettura <span class=\"meta-nav\">&rarr;</span>"
 #: ../single.php:48
 #: ../archive.php:56
 #: ../index.php:42
+#: ../minimal-georgia/search.php:47
+#: ../minimal-georgia/single.php:48
 msgid "&larr; Older posts"
 msgstr "&larr; Articoli precedenti"
 
@@ -42,64 +47,81 @@ msgstr "&larr; Articoli precedenti"
 #: ../single.php:49
 #: ../archive.php:57
 #: ../index.php:43
+#: ../minimal-georgia/search.php:48
+#: ../minimal-georgia/single.php:49
 msgid "Newer posts &rarr;"
 msgstr "Articoli successivi &rarr;"
 
 #: ../sidebar.php:28
+#: ../minimal-georgia/sidebar.php:28
 msgid "Color Schemes"
 msgstr "Combinazioni di colore"
 
 #: ../sidebar.php:31
+#: ../minimal-georgia/sidebar.php:31
 msgid "About the theme &raquo;"
 msgstr "Info sul tema &raquo;"
 
 #: ../sidebar.php:33
+#: ../minimal-georgia/sidebar.php:33
 msgid "Hey There!"
 msgstr "Ciao!"
 
 #: ../sidebar.php:34
+#: ../minimal-georgia/sidebar.php:34
 msgid "Welcome to the Minimal Georgia theme. You're seeing this text because you haven't configured your widgets. Browse to the Widgets section in your admin panel."
 msgstr "Benvenuto nel tema Minimal Georgia. Stai visualizzando questo messagio perché non hai ancora configurato l'area widget. Vai subito nella sezione widget."
 
 #: ../single.php:29
 #: ../page.php:28
 #: ../index.php:30
+#: ../minimal-georgia/single.php:29
 msgid "Pages:"
 msgstr "Pagine:"
 
 #: ../single.php:32
+#: ../minimal-georgia/single.php:32
 msgid "Categories: "
 msgstr "Categorie:"
 
 #: ../single.php:35
 #: ../index.php:31
+#: ../minimal-georgia/single.php:35
 msgid "Edit this post"
 msgstr "Modifica questo articolo"
 
 #: ../footer.php:20
+#: ../minimal-georgia/footer.php:20
 msgid "Copyright"
 msgstr "Copyright"
 
 #: ../comments.php:20
+#: ../minimal-georgia/comments.php:20
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Questo articolo é stato protetto con una password. Inserisci la password per potere leggere i commenti."
 
 #: ../comments.php:37
+#: ../minimal-georgia/comments.php:37
 #, php-format
 msgid "One Response to %2$s"
 msgstr "Una risposta a %2$s"
 
 #: ../comments.php:43
 #: ../comments.php:56
+#: ../minimal-georgia/comments.php:43
+#: ../minimal-georgia/comments.php:56
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Commenti precedenti"
 
 #: ../comments.php:44
 #: ../comments.php:57
+#: ../minimal-georgia/comments.php:44
+#: ../minimal-georgia/comments.php:57
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Commenti successivi <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../comments.php:68
+#: ../minimal-georgia/comments.php:68
 msgid "Comments are closed."
 msgstr "I commenti non sono attivi."
 
@@ -138,115 +160,115 @@ msgstr "Archivi blog"
 msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
 msgstr "Sì, potrai inserire qui nelle note a footer qualsiasi testo di tuo gradimento. Visita la pagina delle impostazioni tema per maggiori e dettagliate informazioni."
 
-#: ../functions.php:66
+#: ../functions.php:67
 msgid "Primary Navigation Menu"
 msgstr "Menu Principale Navigazione"
 
-#: ../functions.php:67
+#: ../functions.php:68
 msgid "Page Not Found Menu"
 msgstr "Menu pagine non trovate"
 
-#: ../functions.php:213
+#: ../functions.php:214
 msgid "Inferno"
 msgstr "Inferno"
 
-#: ../functions.php:214
+#: ../functions.php:215
 msgid "Sapphire"
 msgstr "Sapphire"
 
-#: ../functions.php:215
+#: ../functions.php:216
 msgid "Emeraldo"
 msgstr "Emeraldo"
 
-#: ../functions.php:216
+#: ../functions.php:217
 msgid "Silent Gray"
 msgstr "Silent Gray"
 
-#: ../functions.php:217
+#: ../functions.php:218
 msgid "Liquid Purple"
 msgstr "Liquid Purple"
 
-#: ../functions.php:246
+#: ../functions.php:247
 msgid "General Settings"
 msgstr "Impostazioni generali"
 
-#: ../functions.php:247
+#: ../functions.php:248
 msgid "Color Scheme"
 msgstr "Combinazione di colore"
 
-#: ../functions.php:248
+#: ../functions.php:249
 msgid "Footer Note"
 msgstr "Note a Footer"
 
-#: ../functions.php:249
+#: ../functions.php:250
 msgid "Custom CSS"
 msgstr "CSS personalizzato"
 
-#: ../functions.php:281
+#: ../functions.php:282
 msgid "Theme Options"
 msgstr "Opzioni Tema"
 
-#: ../functions.php:300
+#: ../functions.php:301
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">scrive:</span>"
 
-#: ../functions.php:303
+#: ../functions.php:304
 msgid "Your comment is awaiting moderation."
 msgstr "Il tuo commento é in attesa di essere moderato."
 
-#: ../functions.php:310
+#: ../functions.php:311
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: ../functions.php:310
-#: ../functions.php:327
+#: ../functions.php:311
+#: ../functions.php:328
 msgid "(Edit)"
 msgstr "(Modifica)"
 
-#: ../functions.php:327
+#: ../functions.php:328
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:353
+#: ../functions.php:354
 msgid "Minimal Georgia Options"
 msgstr "Opzioni Minimal Georgia"
 
-#: ../functions.php:379
+#: ../functions.php:380
 msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
 msgstr "Benvenuto in <strong>Minimal Georgia</strong>. Grazie per l'utilizzo di questo tema. Adesso, vai alle <a href='themes.php?page=minimalgeorgia-settings'>Opzioni Tema</a> e buon divertimento!"
 
-#: ../functions.php:404
+#: ../functions.php:405
 #, php-format
 msgid "Powered by %1$s running %2$s by %3$s"
 msgstr "Powered by %1$s running %2$s by %3$s"
 
-#: ../functions.php:417
+#: ../functions.php:418
 msgid "These settings affect the general look of your theme."
 msgstr "Queste impostazioni avranno effetto sull'aspetto generale del tema."
 
-#: ../functions.php:440
+#: ../functions.php:441
 msgid "Browse to your home page to see the new color scheme in action."
 msgstr "Vai alla home page per vedere in azione la nuova cambinazione di colori."
 
-#: ../functions.php:455
+#: ../functions.php:456
 msgid "This is the text that appears at the bottom of every page, right next to the copyright notice."
 msgstr "Questo é il testo che comparirà al fondo di ogni pagina alla destra delle note di copyright. "
 
-#: ../functions.php:469
+#: ../functions.php:470
 msgid "Custom stylesheets are included in the head section after all the theme stylesheets are loaded."
 msgstr "I fogli di stile personalizzati verranno inclusi nella sezione head dopo che saranno stati caricati tutti i fogli di stile del tema."
 
-#: ../functions.php:496
-msgid "Color Picker"
-msgstr "Selettore di colore"
+#: ../functions.php:497
+msgid "MG Color Picker"
+msgstr "MG selettore di colore"
 
-#: ../functions.php:496
+#: ../functions.php:497
 msgid "A Minimal Georgia color picker widget for your sidebar."
 msgstr "Widget sidebar con un selettore di colore per Minimal Georgia."
 
-#: ../functions.php:515
+#: ../functions.php:516
 msgid "Title:"
 msgstr "Titolo:"
 
@@ -255,14 +277,9 @@ msgstr "Titolo:"
 msgid "Page %s"
 msgstr "Pagina %s"
 
-msgid "Blogroll"
-msgstr "Blogroll"
-
-msgid "Search"
-msgstr "Cerca"
-
-msgid "Save Changes"
-msgstr "Salva le modifiche"
+#: ../minimal-georgia/functions.php:497
+msgid "Color Picker"
+msgstr "Selettore di colore"
 
 #~ msgid "Archives"
 #~ msgstr "Archivi"
@@ -270,10 +287,16 @@ msgstr "Salva le modifiche"
 #, fuzzy
 #~ msgid "Categories"
 #~ msgstr "Categorie:"
+#~ msgid "Blogroll"
+#~ msgstr "Blogroll"
 
 #, fuzzy
 #~ msgid "Search for:"
 #~ msgstr "Risultati della ricerca per: %s"
+#~ msgid "Search"
+#~ msgstr "Cerca"
+#~ msgid "Save Changes"
+#~ msgstr "Salva le modifiche"
 
 #, fuzzy
 #~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -366,3 +389,4 @@ msgstr "Salva le modifiche"
 #, fuzzy
 #~ msgid "Search results for %s"
 #~ msgstr "Risultati della ricerca per: %s"
+

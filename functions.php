@@ -494,7 +494,7 @@ class MinimalGeorgiaColorPickerWidget extends WP_Widget {
 	 * 
 	 */
 	function MinimalGeorgiaColorPickerWidget() {
-		parent::WP_Widget(false, $name = __('Color Picker', 'minimalgeorgia'), $widget_options = array('description' => __('A Minimal Georgia color picker widget for your sidebar.', 'minimalgeorgia')));
+		parent::WP_Widget(false, $name = __('MG Color Picker', 'minimalgeorgia'), $widget_options = array('description' => __('A Minimal Georgia color picker widget for your sidebar.', 'minimalgeorgia')));
 		
 		if (is_active_widget(false, false, $this->id_base, true)) {
 			wp_enqueue_style('minimalgeorgia-preview', get_stylesheet_directory_uri() . '/preview.css');
