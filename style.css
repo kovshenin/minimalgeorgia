@@ -794,3 +794,44 @@ hr {
 	background: #ddd;
 	margin: 10px 10px;
 }
+
+/* Post Formst */
+.format-gallery .post-title {
+	background: transparent url(images/post-formats/gallery.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-chat .post-title {
+	background: transparent url(images/post-formats/chat.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-link .post-title {
+	background: transparent url(images/post-formats/link.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-image .post-title {
+	background: transparent url(images/post-formats/image.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-quote .post-title {
+	background: transparent url(images/post-formats/quote.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-status .post-title {
+	background: transparent url(images/post-formats/status.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-video .post-title {
+	background: transparent url(images/post-formats/video.png) 0 9px no-repeat;
+	padding-left: 30px;
+}
+
+.format-audio .post-title {
+	background: transparent url(images/post-formats/audio.png) 0 9px no-repeat;
+	padding-left: 30px;
+}

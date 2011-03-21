@@ -52,7 +52,8 @@ class MinimalGeorgia {
 		);
 
 		// Theme supports
-		add_theme_support('automatic-feed-links');		
+		add_theme_support('automatic-feed-links');
+		add_theme_support('post-formats', array('gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
 		
 		// Editor style for TinyMCE.
 		add_editor_style();
