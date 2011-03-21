@@ -98,6 +98,13 @@ class MinimalGeorgia {
 		add_filter('body_class', array(&$this, 'body_class'));
 	}
 	
+	/*
+	 * Custom CSS Output
+	 * 
+	 * Checks the custom CSS theme option and outputs the stylesheets inside
+	 * a <style> tag in the header. Function is run during wp_print_styles.
+	 * 
+	 */
 	function custom_css() {
 		if (isset($this->options['custom-css']) && strlen($this->options['custom-css']))
 			echo "<style>\n" . $this->options['custom-css'] . "\n</style>\n";
@@ -177,8 +184,8 @@ class MinimalGeorgia {
 	/*
 	 * Register Sidebars
 	 * 
-	 * Registers a single right sidebar ready for widgets. No extra
-	 * widgets are defined.
+	 * Registers a single right sidebar ready for widgets. An extra
+	 * Color picker widget is defined.
 	 * 
 	 */
 	function register_sidebars() {
@@ -188,6 +195,8 @@ class MinimalGeorgia {
 			'before_title' => '<p class="heading">',
 			'after_title' => '</p>',
 		));
+
+		register_widget('MinimalGeorgiaColorPickerWidget');
 	}
 	
 	/*
@@ -460,8 +469,93 @@ class MinimalGeorgia {
 		<span class="description"><?php _e('Custom stylesheets are included in the head section after all the theme stylesheets are loaded.', 'minimalgeorgia'); ?></span>
 	<?php
 	}
-	 
 };
 
 // Initialize the above class after theme setup
 add_action('after_setup_theme', create_function('', 'global $minimalgeorgia; $minimalgeorgia = new MinimalGeorgia();'));
+
+/*
+ * Color Picker Widget
+ * 
+ * This is the Color Picker widget class used by Minimal Georgia to
+ * show off it's multi-color capabilities. The widget is not intended
+ * but may be used by the end-user.
+ * 
+ */
+class MinimalGeorgiaColorPickerWidget extends WP_Widget {
+	
+	/*
+	 * Widget Constructor
+	 * 
+	 * Initializes the new widget and enqueues a stylesheet and a javascript
+	 * if the widget is active. Scripts and styles should be same as 
+	 * $minimalgeorgia->colorscheme_preview_scripts
+	 * 
+	 */
+	function MinimalGeorgiaColorPickerWidget() {
+		parent::WP_Widget(false, $name = __('Color Picker', 'minimalgeorgia'), $widget_options = array('description' => __('A Minimal Georgia color picker widget for your sidebar.', 'minimalgeorgia')));
+		
+		if (is_active_widget(false, false, $this->id_base, true)) {
+			wp_enqueue_style('minimalgeorgia-preview', get_stylesheet_directory_uri() . '/preview.css');
+			wp_enqueue_script('minimalgeorgia-preview', get_stylesheet_directory_uri() . '/js/preview.js', array('jquery'));
+		}
+	}
+	
+	/*
+	 * Widget Form
+	 * 
+	 * Outputs the widget form data. We're only using one form field
+	 * called title.
+	 * 
+	 */
+	function form($instance) {
+		$title = esc_attr($instance['title']);
+        ?>
+			<p>
+				<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'minimalgeorgia'); ?></label> 
+				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+			</p>
+        <?php 
+	}
+	
+	/*
+	 * Widget Update
+	 * 
+	 * This is the WordPress magic used to save and restore widget
+	 * instances, validation goes here.
+	 *
+	 */
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		return $instance;
+	}
+	
+	/*
+	 * Widget Output
+	 * 
+	 * This function is used by WordPress (or the_widget()) to output
+	 * the contents of the widget. Note that we're using a global
+	 * $minimalgeorgia object, so we're assuming that it has been
+	 * initialized. Used to gather valid color schemes.
+	 * 
+	 * @global $minimalgeorgia
+	 *
+	 */
+	function widget($args, $instance) {
+		global $minimalgeorgia;
+        extract( $args );
+        $title = apply_filters('widget_title', $instance['title']);
+        
+        echo $before_widget;
+        if ($title)	echo $before_title . $title . $after_title; 
+		?>
+			<p class="color-scheme-selector">
+				<?php foreach ($minimalgeorgia->get_valid_color_schemes() as $value => $caption): ?>
+				<a data="<?php echo $value; ?>" href="#" title="<?php echo $caption; ?>"><?php echo $caption; ?></a>
+				<?php endforeach; ?>
+			</p>
+        <?php
+        echo $after_widget;
+	}
+};

@@ -1,8 +1,11 @@
 /*
-Theme Name: Minimal Georgia
-*/
-/*
-Used to style the TinyMCE editor.
+ * Minimal Georgia Editor Style
+
+ * @package WordPress
+ * @subpackage Minimal Georgia
+ * @version 1.4
+ * 
+ * Used to style the TinyMCE editor.
 */
 html .mceContentBody {
 	max-width:740px;
