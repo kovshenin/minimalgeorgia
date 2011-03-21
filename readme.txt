@@ -18,6 +18,7 @@ Notes & Limitations:
 
  * Primary menu supports up to 6 items (depending on their names) because of the width limitation. If more are added, the extra is not visible.
  * The Preview script and stylesheet are loaded if you haven't placed any widgets on your sidebar, this results in a Color Schemes block in the sidebar. Drop at least one widget on to your sidebar to get rid of it.
+ * The minimum resolution for Minimal Georgia is 1024 pixels wide. The theme width is 960 pixels and the content width (including left and right sidebars) is 940 pixels.
 
 
 Translations:

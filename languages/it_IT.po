@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-21 13:38+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
+"Last-Translator: Gianni Diurno (aka gidibao) <gidibao[at]gmail[dot]com>\n"
 "Language-Team: Gianni Diurno | gidibao.net\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -46,9 +46,8 @@ msgid "Newer posts &rarr;"
 msgstr "Articoli successivi &rarr;"
 
 #: ../sidebar.php:28
-#, fuzzy
 msgid "Color Schemes"
-msgstr "Schema colore"
+msgstr "Combinazioni di colore"
 
 #: ../sidebar.php:31
 msgid "About the theme &raquo;"
@@ -141,7 +140,7 @@ msgstr "Sì, potrai inserire qui nelle note a footer qualsiasi testo di tuo grad
 
 #: ../functions.php:66
 msgid "Primary Navigation Menu"
-msgstr "Menu Principale navigazione"
+msgstr "Menu Principale Navigazione"
 
 #: ../functions.php:67
 msgid "Page Not Found Menu"
@@ -152,7 +151,6 @@ msgid "Inferno"
 msgstr "Inferno"
 
 #: ../functions.php:214
-#, fuzzy
 msgid "Sapphire"
 msgstr "Sapphire"
 
@@ -170,11 +168,11 @@ msgstr "Liquid Purple"
 
 #: ../functions.php:246
 msgid "General Settings"
-msgstr ""
+msgstr "Impostazioni generali"
 
 #: ../functions.php:247
 msgid "Color Scheme"
-msgstr "Schema colore"
+msgstr "Combinazione di colore"
 
 #: ../functions.php:248
 msgid "Footer Note"
@@ -182,7 +180,7 @@ msgstr "Note a Footer"
 
 #: ../functions.php:249
 msgid "Custom CSS"
-msgstr ""
+msgstr "CSS personalizzato"
 
 #: ../functions.php:281
 msgid "Theme Options"
@@ -226,32 +224,31 @@ msgstr "Powered by %1$s running %2$s by %3$s"
 
 #: ../functions.php:417
 msgid "These settings affect the general look of your theme."
-msgstr ""
+msgstr "Queste impostazioni avranno effetto sull'aspetto generale del tema."
 
 #: ../functions.php:440
 msgid "Browse to your home page to see the new color scheme in action."
-msgstr ""
+msgstr "Vai alla home page per vedere in azione la nuova cambinazione di colori."
 
 #: ../functions.php:455
 msgid "This is the text that appears at the bottom of every page, right next to the copyright notice."
-msgstr ""
+msgstr "Questo é il testo che comparirà al fondo di ogni pagina alla destra delle note di copyright. "
 
 #: ../functions.php:469
 msgid "Custom stylesheets are included in the head section after all the theme stylesheets are loaded."
-msgstr ""
+msgstr "I fogli di stile personalizzati verranno inclusi nella sezione head dopo che saranno stati caricati tutti i fogli di stile del tema."
 
 #: ../functions.php:496
-#, fuzzy
 msgid "Color Picker"
-msgstr "Schema colore"
+msgstr "Selettore di colore"
 
 #: ../functions.php:496
 msgid "A Minimal Georgia color picker widget for your sidebar."
-msgstr ""
+msgstr "Widget sidebar con un selettore di colore per Minimal Georgia."
 
 #: ../functions.php:515
 msgid "Title:"
-msgstr ""
+msgstr "Titolo:"
 
 #: ../header.php:32
 #, php-format
@@ -262,10 +259,10 @@ msgid "Blogroll"
 msgstr "Blogroll"
 
 msgid "Search"
-msgstr "Search"
+msgstr "Cerca"
 
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr "Salva le modifiche"
 
 #~ msgid "Archives"
 #~ msgstr "Archivi"
@@ -369,4 +366,3 @@ msgstr "Save Changes"
 #, fuzzy
 #~ msgid "Search results for %s"
 #~ msgstr "Risultati della ricerca per: %s"
-
