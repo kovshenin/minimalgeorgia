@@ -9,7 +9,7 @@
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @version 1.3
+ * @version 1.4
  */
 
 ?><!DOCTYPE html>
@@ -41,16 +41,18 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div class="header-fill">
-		<div class="container_8 header">
-			<div class="grid_1">
-				&nbsp;
-			</div>
-			<div class="grid_2">
-				<a href="<?php echo home_url(); ?>" class="logo"><?php bloginfo('name'); ?></a>
-			</div>
-			<div class="grid_5 pre-menu">
-				<?php wp_nav_menu(array('menu' => 'primary', 'menu_id' => 'menu-header', 'theme_location' => 'primary', 'depth' => 1)); ?> 
+	<div class="header-fill-container">
+		<div class="header-fill">
+			<div class="container_8 header">
+				<div class="grid_1">
+					&nbsp;
+				</div>
+				<div class="grid_2">
+					<a href="<?php echo home_url(); ?>" class="logo"><?php bloginfo('name'); ?></a>
+				</div>
+				<div class="grid_5 pre-menu">
+					<?php wp_nav_menu(array('menu' => 'primary', 'menu_id' => 'menu-header', 'theme_location' => 'primary', 'depth' => 1)); ?> 
+				</div>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @version 1.3
+ * @version 1.4
  * 
  */
 
@@ -357,7 +357,7 @@ class MinimalGeorgia {
 	 * 
 	 */
 	function welcome_notice() {
-		if ($_REQUEST['page'] !== 'minimalgeorgia-settings')
+		if (!isset($_REQUEST['page']) || $_REQUEST['page'] !== 'minimalgeorgia-settings')
 			if (!isset($this->options['options-visited']) || !$this->options['options-visited'])
 				echo "<div class='update-nag'>" . __("Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!") . "</div>";
 	}
