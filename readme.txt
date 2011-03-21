@@ -13,10 +13,10 @@ Theme features:
  * translation-ready
  * sticky-post
  * editor-style
+ * post-formats
 
 Notes & Limitations:
 
- * The Preview script and stylesheet are loaded if you haven't placed any widgets on your sidebar, this results in a Color Schemes block in the sidebar. Drop at least one widget on to your sidebar to get rid of it.
  * The minimum resolution for Minimal Georgia is 1024 pixels wide. The theme width is 960 pixels and the content width (including left and right sidebars) is 940 pixels.
  * Icons bundled with the theme are Elementary Icons by DanRabbit (http://gnome-look.org/content/show.php/elementary+Icons?content=73439 and http://danrabbit.deviantart.com/art/elementary-Icons-65437279) Licensed under GPL.
 
@@ -38,6 +38,11 @@ More info: http://kovshenin.com/wordpress/themes/minimal-georgia/
 ----
 
 Changelog:
+
+= 1.4.1 =
+ * GPL icons for post formats
+ * Header now fluid (vertically), fits long blog titles and many more navigation menus
+ * Minor admin UI and security fixes
 
 = 1.4 =
 
