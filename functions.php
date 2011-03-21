@@ -73,7 +73,7 @@ class MinimalGeorgia {
 		 * Registers sidebars for widgets, registers admin settings, fires
 		 * a firstrun during admin init, registers a theme deactivation hook,
 		 * adds the menu options, fires a welcome notice, footer text in template,
-		 * color scheme preview scripts (sidebar).
+		 * color scheme preview scripts (sidebar), custom css.
 		 * 
 		 */
 		add_action('widgets_init', array(&$this, 'register_sidebars'));
@@ -83,7 +83,8 @@ class MinimalGeorgia {
 		add_action('admin_menu', array(&$this, 'add_admin_options'));
 		add_action('admin_notices' , array(&$this, 'welcome_notice'));
 		add_action('minimalgeorgia_footer', array(&$this, 'footer_text'));
-		add_action('wp_loaded', array(&$this, 'colorscheme_preview_scripts'));
+		add_action('wp_print_styles', array(&$this, 'colorscheme_preview_scripts'));
+		add_action('wp_print_styles', array(&$this, 'custom_css'));
 		
 		/*
 		 * Filters
@@ -95,6 +96,11 @@ class MinimalGeorgia {
 		add_filter('gallery_style', array(&$this, 'remove_gallery_css'));
 		add_filter('minimalgeorgia_footer_note', 'wpautop');
 		add_filter('body_class', array(&$this, 'body_class'));
+	}
+	
+	function custom_css() {
+		if (isset($this->options['custom-css']) && strlen($this->options['custom-css']))
+			echo "<style>\n" . $this->options['custom-css'] . "\n</style>\n";
 	}
 	
 	/*
@@ -228,9 +234,10 @@ class MinimalGeorgia {
 		register_setting('minimalgeorgia-options', 'minimalgeorgia-options', array(&$this, 'validate_options'));
 		
 		// Settings fields and sections
-		add_settings_section('section_general', 'General Settings', array(&$this, 'section_general'), 'minimalgeorgia-options');
-		add_settings_field('color-scheme', 'Color Scheme', array(&$this, 'setting_color_scheme'), 'minimalgeorgia-options', 'section_general');
-		add_settings_field('footer-note', 'Footer Note', array(&$this, 'setting_footer_note'), 'minimalgeorgia-options', 'section_general');
+		add_settings_section('section_general', __('General Settings', 'minimalgeorgia'), array(&$this, 'section_general'), 'minimalgeorgia-options');
+		add_settings_field('color-scheme', __('Color Scheme', 'minimalgeorgia') , array(&$this, 'setting_color_scheme'), 'minimalgeorgia-options', 'section_general');
+		add_settings_field('footer-note', __('Footer Note', 'minimalgeorgia'), array(&$this, 'setting_footer_note'), 'minimalgeorgia-options', 'section_general');
+		add_settings_field('custom-css', __('Custom CSS', 'minimalgeorgia'), array(&$this, 'setting_custom_css'), 'minimalgeorgia-options', 'section_general');
 	}
 	
 	/*
@@ -248,6 +255,7 @@ class MinimalGeorgia {
 		// Theme options.
 		$options['color-scheme'] = array_key_exists($options['color-scheme'], $this->get_valid_color_schemes()) ? $options['color-scheme'] : 'blue';
 		$options['footer-note'] = trim(strip_tags($options['footer-note'], '<a><b><strong><em><ul><ol><li><div><span>'));
+		$options['custom-css'] = trim(strip_tags($options['custom-css']));
 		
 		return $options;
 	}
@@ -436,6 +444,20 @@ class MinimalGeorgia {
 	?>
 		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[footer-note]"><?php echo $this->options['footer-note']; ?></textarea><br />
 		<span class="description"><?php _e('This is the text that appears at the bottom of every page, right next to the copyright notice.', 'minimalgeorgia'); ?></span>
+	<?php
+	}
+	
+	/*
+	 * Settings: Custom CSS
+	 * 
+	 * Outputs a textarea for the custom CSS in Theme Options. The value
+	 * is output during wp_head() if it exists.
+	 * 
+	 */
+	function setting_custom_css() {
+	?>
+		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[custom-css]"><?php echo $this->options['custom-css']; ?></textarea><br />
+		<span class="description"><?php _e('Custom stylesheets are included in the head section after all the theme stylesheets are loaded.', 'minimalgeorgia'); ?></span>
 	<?php
 	}
 	 

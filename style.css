@@ -18,7 +18,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 body {
 	font-family: Georgia, serif;
 	font-size: 100%;
-	background: white url(images/bg.png) 50% 0%;
+	background: white url(images/bg.png) center 0 repeat-y;
 }
 
 /* Different color schemes for Minimal Georgia */
@@ -36,19 +36,33 @@ body {
 }
 
 /* Fixes Firefox header overflow bug */
-.header-fill-container {
-	width: 100%;
+.header-shadow-container {
 	float: left;
+	width: 100%;
 	overflow: hidden;
+	position: absolute;
+	top: 0;
+	height: 49px;
+	z-index: -1;
 }
 
-.header-fill {
-	background: black url(images/header-fill.png) 0 0 repeat-x;
-	height: 39px;
+.header-shadow {
+	width: 100%;
+	float: left;
 	-moz-box-shadow: 0px 2px 6px #999;
 	-webkit-box-shadow: 0px 2px 6px #999;
 	box-shadow: 0px 2px 6px #999;
 	margin-bottom: 40px;
+	height: 39px;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+/* End fixes */
+
+.header-fill {
+	background: #124D87 url(images/header-fill.png) 0 0 repeat-x;
+	height: 39px;
 }
 
 a.logo {
@@ -61,60 +75,116 @@ a.logo {
 }
 
 .pre-menu {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	height: 32px;
 }
 
-ul#menu-header, .header .menu ul {
+ul#menu-header, .header .menu > ul {
 	list-style: none;
 	float: right;
 	margin-top: 10px;
+	position: relative;
 }
 
-ul#menu-header li, .header .menu ul li {
+/* Popout menus */
+ul#menu-header ul.sub-menu, .header .menu ul.children {
+	position: absolute;
+	list-style: none;
+	padding-top: 6px;
+	padding-bottom: 4px;
+	z-index: 9999;
+	padding-right: 34px;
+	overflow: hidden;
+	background: #4178ae;
+	top: 29px;
+	margin: 0;
+	display: none;
+	opacity: 0.9;
+
+	-moz-box-shadow: 0px 2px 6px #999;
+	-webkit-box-shadow: 0px 2px 6px #999;
+	box-shadow: 0px 2px 6px #999;
+}
+
+ul.sub-menu a, .menu ul.children a {
+	width: 100%;
 	float: left;
-	margin-left: 24px;
+}
+
+ul.sub-menu li, .menu ul.children li {
+	float: left;
+	clear: both;
+	width: 100%;
+}
+
+ul#menu-header li:hover > ul.sub-menu, .header .menu li:hover > ul.children {
+	display: block;
+}
+/* End popout */
+
+ul#menu-header li, .header .menu ul li {
+	/*margin-left: 24px;*/
+	float: left;
 }
 
 ul#menu-header li a, .header .menu ul li a {
 	color: white;
 	text-decoration: none;
+	display: inline-block;
+	height: 29px;
+	padding: 0 15px;
 }
 
 ul#menu-header li a:hover, 
-ul#menu-header li.current_page_item a, 
+ul#menu-header li.current_page_item > a, 
 .header .menu ul li a:hover, 
-.header .menu ul li.current_page_item a {
+.header .menu ul li.current_page_item > a {
 	color: #99B9D1;
 }
 
 /* Different color schemes */
 .mg-green ul#menu-header li a:hover, 
-.mg-green ul#menu-header li.current_page_item a, 
+.mg-green ul#menu-header li.current_page_item > a, 
 .mg-green .header .menu ul li a:hover, 
-.mg-green .header .menu ul li.current_page_item a {
+.mg-green .header .menu ul li.current_page_item > a {
 	color: #99d1c2;
 }
 .mg-red ul#menu-header li a:hover, 
-.mg-red ul#menu-header li.current_page_item a, 
+.mg-red ul#menu-header li.current_page_item > a, 
 .mg-red .header .menu ul li a:hover, 
-.mg-red .header .menu ul li.current_page_item a {
+.mg-red .header .menu ul li.current_page_item > a {
 	color: #d1a099;
 }
 .mg-gray ul#menu-header li a:hover, 
-.mg-gray ul#menu-header li.current_page_item a, 
+.mg-gray ul#menu-header li.current_page_item > a, 
 .mg-gray .header .menu ul li a:hover, 
-.mg-gray .header .menu ul li.current_page_item a {
+.mg-gray .header .menu ul li.current_page_item > a {
 	color: #bbb;
 }
 .mg-purple ul#menu-header li a:hover, 
-.mg-purple ul#menu-header li.current_page_item a, 
+.mg-purple ul#menu-header li.current_page_item > a, 
 .mg-purple .header .menu ul li a:hover, 
-.mg-purple .header .menu ul li.current_page_item a {
+.mg-purple .header .menu ul li.current_page_item > a {
 	color: #d199b5;
 }
 
-
+/* Popout menu colors */
+.mg-green ul#menu-header ul.sub-menu, 
+.mg-green .header .menu ul.children {
+	background: #128725;
+}
+.mg-red ul#menu-header ul.sub-menu, 
+.mg-red .header .menu ul.children {
+	background: #872812;
+}
+.mg-gray ul#menu-header ul.sub-menu, 
+.mg-gray .header .menu ul.children {
+	background: #777;
+}
+.mg-purple ul#menu-header ul.sub-menu, 
+.mg-purple .header .menu ul.children {
+	background: #793D70;
+}
 
 .right-arrow-container {
 	position: relative;
@@ -187,7 +257,7 @@ p.comments-count {
 p {
 	margin: 20px 0;
 	font-size: 13pt;
-	line-height: 16pt;
+	line-height: 1.5em;
 	color: #333;
 }
 
@@ -327,7 +397,22 @@ table th {
 	text-align: left;
 	padding: 8px;
 	font-weight: normal;
-	border-bottom: solid 1px #ddd;
+	background: #4178ae;
+	color: white;
+}
+
+/* Table Color Schemes */
+.mg-green table th {
+	background: #128725;
+}
+.mg-red table th {
+	background: #872812;
+}
+.mg-gray table th {
+	background: #777;
+}
+.mg-purple table th {
+	background: #793D70;
 }
 
 dl {
