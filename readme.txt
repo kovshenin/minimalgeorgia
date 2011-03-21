@@ -47,3 +47,4 @@ Changelog:
  * Minor fixes for Firefox overflow bug
  * Line height has been set to 1.5 em for better readability
  * Italian translation has been added
+ * Now with post formats!

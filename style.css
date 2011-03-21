@@ -777,9 +777,9 @@ img.avatar {
 	font-size: 10pt;
 }
 
-.sticky .post-content {
-	background: #f3f3f3;
-	padding: 8px;
+.sticky .post-title {
+	background: transparent url(images/post-formats/sticky.png) 0 9px no-repeat;
+	padding-left: 30px;
 }
 
 .bypostauthor > .comment-wrapper {
