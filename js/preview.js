@@ -7,6 +7,8 @@
  * 
  * This script comes in pair with a stylesheet called preview.css
  * 
+ * @version 1.4
+ * 
  */
  
 jQuery(document).ready(function($) {

@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Minimal Georgia in italiano\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-14 22:04+0100\n"
+"POT-Creation-Date: 2011-03-21 13:38+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Gianni Diurno (aka gidibao) <gidibao[at]gmail[dot]com>\n"
+"Last-Translator: Konstantin Kovshenin <kovshenin@gmail.com>\n"
 "Language-Team: Gianni Diurno | gidibao.net\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Poedit-Language: Italian\n"
 "X-Poedit-KeywordsList: __;_e;_n\n"
 "X-Poedit-Basepath: ../\n"
@@ -18,259 +18,355 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: 404.php:22
-#: ../minimal-georgia/404.php:22
-msgid "Not Found"
-msgstr "Non trovato"
-
-#: 404.php:24
-#: ../minimal-georgia/404.php:24
-msgid "We're deeply sorry, but the page you were looking for cannot be found. Try something from the list below:"
-msgstr "La pagina richiesta non é disponibile. Utilizza le opzioni qui sotto:"
-
-#: archive.php:20
-#: ../minimal-georgia/archive.php:20
-#, php-format
-msgid "Daily Archives: <span>%s</span>"
-msgstr "Archivi per giorno: <span>%s</span>"
-
-#: archive.php:22
-#: ../minimal-georgia/archive.php:22
-#, php-format
-msgid "Monthly Archives: <span>%s</span>"
-msgstr "Archivi per mese: <span>%s</span>"
-
-#: archive.php:24
-#: ../minimal-georgia/archive.php:24
-#, php-format
-msgid "Yearly Archives: <span>%s</span>"
-msgstr "Archivi per anno: <span>%s</span>"
-
-#: archive.php:26
-#: ../minimal-georgia/archive.php:26
-msgid "Blog Archives"
-msgstr "Archivi blog"
-
-#: archive.php:44
-#: index.php:28
-#: page.php:26
-#: search.php:35
-#: single.php:26
-#: ../minimal-georgia/archive.php:44
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Prosegui la lettura <span class=\"meta-nav\">&rarr;</span>"
-
-#: archive.php:56
-#: index.php:42
-#: search.php:47
-#: single.php:48
-#: ../minimal-georgia/archive.php:56
-msgid "&larr; Older posts"
-msgstr "&larr; Articoli precedenti"
-
-#: archive.php:57
-#: index.php:43
-#: search.php:48
-#: single.php:49
-#: ../minimal-georgia/archive.php:57
-msgid "Newer posts &rarr;"
-msgstr "Articoli successivi &rarr;"
-
-#: comments.php:18
-#: ../minimal-georgia/comments.php:18
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Questo articolo é stato protetto con una password. Inserisci la password per potere leggere i commenti."
-
-#: comments.php:35
-#: ../minimal-georgia/comments.php:35
-#, php-format
-msgid "One Response to %2$s"
-msgstr "Una risposta a %2$s"
-
-#: comments.php:41
-#: comments.php:54
-#: ../minimal-georgia/comments.php:41
-#: ../minimal-georgia/comments.php:54
-msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
-msgstr "<span class=\"meta-nav\">&larr;</span> Commenti precedenti"
-
-#: comments.php:42
-#: comments.php:55
-#: ../minimal-georgia/comments.php:42
-#: ../minimal-georgia/comments.php:55
-msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Commenti successivi <span class=\"meta-nav\">&rarr;</span>"
-
-#: comments.php:66
-#: ../minimal-georgia/comments.php:66
-msgid "Comments are closed."
-msgstr "I commenti non sono attivi."
-
-#: footer.php:14
-#: ../minimal-georgia/footer.php:14
-#, php-format
-msgid "Powered by %1$s running %2$s by %3$s"
-msgstr "Powered by %1$s running %2$s by %3$s"
-
-#: footer.php:20
-#: ../minimal-georgia/footer.php:20
-msgid "Copyright"
-msgstr "Copyright"
-
-#: functions.php:39
-#: ../minimal-georgia/functions.php:39
-msgid "Inferno"
-msgstr "Inferno"
-
-#: functions.php:40
-#: ../minimal-georgia/functions.php:40
-msgid "Saphirre"
-msgstr "Sapphire"
-
-#: functions.php:41
-#: ../minimal-georgia/functions.php:41
-msgid "Emeraldo"
-msgstr "Emeraldo"
-
-#: functions.php:42
-#: ../minimal-georgia/functions.php:42
-msgid "Silent Gray"
-msgstr "Silent Gray"
-
-#: functions.php:43
-#: ../minimal-georgia/functions.php:43
-msgid "Liquid Purple"
-msgstr "Liquid Purple"
-
-#: functions.php:54
-#: ../minimal-georgia/functions.php:54
-msgid "Primary Navigation Menu"
-msgstr "Menu Principale navigazione"
-
-#: functions.php:55
-#: ../minimal-georgia/functions.php:55
-msgid "Page Not Found Menu"
-msgstr "Menu pagine non trovate"
-
-#: functions.php:77
-#: ../minimal-georgia/functions.php:77
-#, php-format
-msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"says\">scrive:</span>"
-
-#: functions.php:80
-#: ../minimal-georgia/functions.php:80
-msgid "Your comment is awaiting moderation."
-msgstr "Il tuo commento é in attesa di essere moderato."
-
-#: functions.php:87
-#: ../minimal-georgia/functions.php:87
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s alle %2$s"
-
-#: functions.php:87
-#: functions.php:104
-#: ../minimal-georgia/functions.php:87
-#: ../minimal-georgia/functions.php:104
-msgid "(Edit)"
-msgstr "(Modifica)"
-
-#: functions.php:104
-#: ../minimal-georgia/functions.php:104
-msgid "Pingback:"
-msgstr "Pingback:"
-
-#: functions.php:114
-#: ../minimal-georgia/functions.php:114
-msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
-msgstr "Benvenuto in <strong>Minimal Georgia</strong>. Grazie per l'utilizzo di questo tema. Adesso, vai alle <a href='themes.php?page=minimalgeorgia-settings'>Opzioni Tema</a> e buon divertimento!"
-
-#: functions.php:142
-#: ../minimal-georgia/functions.php:142
-msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
-msgstr "Sì, potrai inserire qui nelle note a footer qualsiasi testo di tuo gradimento. Visita la pagina delle impostazioni tema per maggiori e dettagliate informazioni."
-
-#: functions.php:160
-#: ../minimal-georgia/functions.php:160
-msgid "Theme Options"
-msgstr "Opzioni Tema"
-
-#: functions.php:171
-#: ../minimal-georgia/functions.php:171
-msgid "Minimal Georgia Options"
-msgstr "Opzioni Minimal Georgia"
-
-#: functions.php:179
-#: ../minimal-georgia/functions.php:179
-msgid "Color Scheme"
-msgstr "Schema colore"
-
-#: functions.php:194
-#: ../minimal-georgia/functions.php:194
-msgid "Footer Note"
-msgstr "Note a Footer"
-
-#: functions.php:201
-#: ../minimal-georgia/functions.php:201
-msgid "Save Changes"
-msgstr "Salva le modifiche"
-
-#: header.php:33
-#, php-format
-msgid "Page %s"
-msgstr "Pagina %s"
-
-#: index.php:30
-#: page.php:28
-#: single.php:29
-msgid "Pages:"
-msgstr "Pagine:"
-
-#: index.php:31
-#: single.php:35
-msgid "Edit this post"
-msgstr "Modifica questo articolo"
-
-#: page.php:29
-msgid "Edit this page"
-msgstr "Modifica questa pagina"
-
-#: search.php:19
+#: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
 
-#: sidebar.php:20
-msgid "Hey There!"
-msgstr "Ciao!"
+#: ../search.php:35
+#: ../single.php:26
+#: ../page.php:26
+#: ../archive.php:44
+#: ../index.php:28
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Prosegui la lettura <span class=\"meta-nav\">&rarr;</span>"
 
-#: sidebar.php:21
-msgid "Welcome to the Minimal Georgia theme. You're seeing this text because you haven't configured your widgets. Browse to the Widgets section in your admin panel."
-msgstr "Benvenuto nel tema Minimal Georgia. Stai visualizzando questo messagio perché non hai ancora configurato l'area widget. Vai subito nella sezione widget."
+#: ../search.php:47
+#: ../single.php:48
+#: ../archive.php:56
+#: ../index.php:42
+msgid "&larr; Older posts"
+msgstr "&larr; Articoli precedenti"
 
-#: sidebar.php:22
+#: ../search.php:48
+#: ../single.php:49
+#: ../archive.php:57
+#: ../index.php:43
+msgid "Newer posts &rarr;"
+msgstr "Articoli successivi &rarr;"
+
+#: ../sidebar.php:28
+#, fuzzy
+msgid "Color Schemes"
+msgstr "Schema colore"
+
+#: ../sidebar.php:31
 msgid "About the theme &raquo;"
 msgstr "Info sul tema &raquo;"
 
-#: sidebar.php:26
-msgid "Archives"
-msgstr "Archivi"
+#: ../sidebar.php:33
+msgid "Hey There!"
+msgstr "Ciao!"
 
-#: sidebar.php:33
-msgid "Categories"
-msgstr "Categorie"
+#: ../sidebar.php:34
+msgid "Welcome to the Minimal Georgia theme. You're seeing this text because you haven't configured your widgets. Browse to the Widgets section in your admin panel."
+msgstr "Benvenuto nel tema Minimal Georgia. Stai visualizzando questo messagio perché non hai ancora configurato l'area widget. Vai subito nella sezione widget."
 
-#: sidebar.php:40
-msgid "Blogroll"
-msgstr "Blogroll"
+#: ../single.php:29
+#: ../page.php:28
+#: ../index.php:30
+msgid "Pages:"
+msgstr "Pagine:"
 
-#: single.php:32
+#: ../single.php:32
 msgid "Categories: "
 msgstr "Categorie:"
 
-#~ msgid "Search for:"
-#~ msgstr "Search for:"
+#: ../single.php:35
+#: ../index.php:31
+msgid "Edit this post"
+msgstr "Modifica questo articolo"
 
-#~ msgid "Search"
-#~ msgstr "Search"
+#: ../footer.php:20
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ../comments.php:20
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Questo articolo é stato protetto con una password. Inserisci la password per potere leggere i commenti."
+
+#: ../comments.php:37
+#, php-format
+msgid "One Response to %2$s"
+msgstr "Una risposta a %2$s"
+
+#: ../comments.php:43
+#: ../comments.php:56
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Commenti precedenti"
+
+#: ../comments.php:44
+#: ../comments.php:57
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Commenti successivi <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:68
+msgid "Comments are closed."
+msgstr "I commenti non sono attivi."
+
+#: ../404.php:22
+msgid "Not Found"
+msgstr "Non trovato"
+
+#: ../404.php:24
+msgid "We're deeply sorry, but the page you were looking for cannot be found. Try something from the list below:"
+msgstr "La pagina richiesta non é disponibile. Utilizza le opzioni qui sotto:"
+
+#: ../page.php:29
+msgid "Edit this page"
+msgstr "Modifica questa pagina"
+
+#: ../archive.php:20
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr "Archivi per giorno: <span>%s</span>"
+
+#: ../archive.php:22
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Archivi per mese: <span>%s</span>"
+
+#: ../archive.php:24
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Archivi per anno: <span>%s</span>"
+
+#: ../archive.php:26
+msgid "Blog Archives"
+msgstr "Archivi blog"
+
+#: ../functions.php:51
+msgid "Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings."
+msgstr "Sì, potrai inserire qui nelle note a footer qualsiasi testo di tuo gradimento. Visita la pagina delle impostazioni tema per maggiori e dettagliate informazioni."
+
+#: ../functions.php:66
+msgid "Primary Navigation Menu"
+msgstr "Menu Principale navigazione"
+
+#: ../functions.php:67
+msgid "Page Not Found Menu"
+msgstr "Menu pagine non trovate"
+
+#: ../functions.php:213
+msgid "Inferno"
+msgstr "Inferno"
+
+#: ../functions.php:214
+#, fuzzy
+msgid "Sapphire"
+msgstr "Sapphire"
+
+#: ../functions.php:215
+msgid "Emeraldo"
+msgstr "Emeraldo"
+
+#: ../functions.php:216
+msgid "Silent Gray"
+msgstr "Silent Gray"
+
+#: ../functions.php:217
+msgid "Liquid Purple"
+msgstr "Liquid Purple"
+
+#: ../functions.php:246
+msgid "General Settings"
+msgstr ""
+
+#: ../functions.php:247
+msgid "Color Scheme"
+msgstr "Schema colore"
+
+#: ../functions.php:248
+msgid "Footer Note"
+msgstr "Note a Footer"
+
+#: ../functions.php:249
+msgid "Custom CSS"
+msgstr ""
+
+#: ../functions.php:281
+msgid "Theme Options"
+msgstr "Opzioni Tema"
+
+#: ../functions.php:300
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">scrive:</span>"
+
+#: ../functions.php:303
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento é in attesa di essere moderato."
+
+#: ../functions.php:310
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s alle %2$s"
+
+#: ../functions.php:310
+#: ../functions.php:327
+msgid "(Edit)"
+msgstr "(Modifica)"
+
+#: ../functions.php:327
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:353
+msgid "Minimal Georgia Options"
+msgstr "Opzioni Minimal Georgia"
+
+#: ../functions.php:379
+msgid "Welcome to <strong>Minimal Georgia</strong>. Thank you so much for using this theme. Now head over to the <a href='themes.php?page=minimalgeorgia-settings'>Theme Options</a> and have some fun!"
+msgstr "Benvenuto in <strong>Minimal Georgia</strong>. Grazie per l'utilizzo di questo tema. Adesso, vai alle <a href='themes.php?page=minimalgeorgia-settings'>Opzioni Tema</a> e buon divertimento!"
+
+#: ../functions.php:404
+#, php-format
+msgid "Powered by %1$s running %2$s by %3$s"
+msgstr "Powered by %1$s running %2$s by %3$s"
+
+#: ../functions.php:417
+msgid "These settings affect the general look of your theme."
+msgstr ""
+
+#: ../functions.php:440
+msgid "Browse to your home page to see the new color scheme in action."
+msgstr ""
+
+#: ../functions.php:455
+msgid "This is the text that appears at the bottom of every page, right next to the copyright notice."
+msgstr ""
+
+#: ../functions.php:469
+msgid "Custom stylesheets are included in the head section after all the theme stylesheets are loaded."
+msgstr ""
+
+#: ../functions.php:496
+#, fuzzy
+msgid "Color Picker"
+msgstr "Schema colore"
+
+#: ../functions.php:496
+msgid "A Minimal Georgia color picker widget for your sidebar."
+msgstr ""
+
+#: ../functions.php:515
+msgid "Title:"
+msgstr ""
+
+#: ../header.php:32
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+msgid "Blogroll"
+msgstr "Blogroll"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#~ msgid "Archives"
+#~ msgstr "Archivi"
+
+#, fuzzy
+#~ msgid "Categories"
+#~ msgstr "Categorie:"
+
+#, fuzzy
+#~ msgid "Search for:"
+#~ msgstr "Risultati della ricerca per: %s"
+
+#, fuzzy
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Commenti precedenti"
+
+#, fuzzy
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Commenti successivi <span class=\"meta-nav\">&rarr;</span>"
+
+#, fuzzy
+#~ msgid "Edit"
+#~ msgstr "(Modifica)"
+
+#, fuzzy
+#~ msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+#~ msgstr "%s <span class=\"says\">scrive:</span>"
+
+#, fuzzy
+#~ msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+#~ msgstr "%s <span class=\"says\">scrive:</span>"
+
+#, fuzzy
+#~ msgid "Nothing Found"
+#~ msgstr "Non trovato"
+
+#, fuzzy
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Archivi blog"
+
+#, fuzzy
+#~ msgid "<span class=\"meta-nav\">&larr;</span> %s"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Commenti precedenti"
+
+#, fuzzy
+#~ msgid "<span class=\"%1$s\">By</span> %2$s"
+#~ msgstr "%s <span class=\"says\">scrive:</span>"
+
+#, fuzzy
+#~ msgid "<span class=\"%1$s\">Published</span> %2$s"
+#~ msgstr "%s <span class=\"says\">scrive:</span>"
+
+#, fuzzy
+#~ msgid "Category Archives: %s"
+#~ msgstr "Categorie:"
+
+#, fuzzy
+#~ msgid "Author Archives: %s"
+#~ msgstr "Archivi blog"
+
+#, fuzzy
+#~ msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Commenti successivi <span class=\"meta-nav\">&rarr;</span>"
+
+#, fuzzy
+#~ msgid "Primary Navigation"
+#~ msgstr "Menu Principale navigazione"
+
+#, fuzzy
+#~ msgid "Primary Widget Area"
+#~ msgstr "Menu Principale navigazione"
+
+#, fuzzy
+#~ msgid "Page Not Found"
+#~ msgstr "Menu pagine non trovate"
+
+#, fuzzy
+#~ msgid "<span class=\"comment_author\">%s</span> "
+#~ msgstr "%s <span class=\"says\">scrive:</span>"
+
+#, fuzzy
+#~ msgid " search results: "
+#~ msgstr "Risultati della ricerca per: %s"
+
+#, fuzzy
+#~ msgid "Pages"
+#~ msgstr "Pagine:"
+
+#, fuzzy
+#~ msgid "Comments (Close)"
+#~ msgstr "I commenti non sono attivi."
+
+#, fuzzy
+#~ msgid "Category"
+#~ msgstr "Categorie"
+
+#, fuzzy
+#~ msgid " Edit"
+#~ msgstr "(Modifica)"
+
+#, fuzzy
+#~ msgid "Search results for %s"
+#~ msgstr "Risultati della ricerca per: %s"
+

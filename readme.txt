@@ -33,3 +33,17 @@ Author: Konstantin Kovshenin (kovshenin@gmail.com)
 Author URL: http://kovshenin.com/
 
 More info: http://kovshenin.com/wordpress/themes/minimal-georgia/
+
+----
+
+Changelog:
+
+= 1.4 =
+
+ * Minor changes in editor style
+ * Color picker has been widgetized
+ * SEO friendliness on homepage and singular pages
+ * The navigation menu has now drop-downs for sub menus
+ * Minor fixes for Firefox overflow bug
+ * Line height has been set to 1.5 em for better readability
+ * Italian translation has been added
