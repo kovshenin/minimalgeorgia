@@ -40,8 +40,8 @@ body {
 	float: left;
 	width: 100%;
 	overflow: hidden;
-	position: absolute;
-	top: 0;
+	position: relative;
+	top: -39px;
 	height: 49px;
 	z-index: -1;
 }
