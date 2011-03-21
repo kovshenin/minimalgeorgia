@@ -83,7 +83,7 @@ class MinimalGeorgia {
 		add_action('admin_menu', array(&$this, 'add_admin_options'));
 		add_action('admin_notices' , array(&$this, 'welcome_notice'));
 		add_action('minimalgeorgia_footer', array(&$this, 'footer_text'));
-		add_action('wp_print_styles', array(&$this, 'colorscheme_preview_scripts'));
+		add_action('wp_enqueue_scripts', array(&$this, 'colorscheme_preview_scripts'));
 		add_action('wp_print_styles', array(&$this, 'custom_css'));
 		
 		/*
