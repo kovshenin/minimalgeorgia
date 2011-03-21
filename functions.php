@@ -9,7 +9,7 @@
  *
  * @package WordPress
  * @subpackage Minimal Georgia
- * @version 1.4
+ * @version 1.4.1
  * 
  */
 
@@ -452,7 +452,7 @@ class MinimalGeorgia {
 	 */
 	function setting_footer_note() {
 	?>
-		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[footer-note]"><?php echo $this->options['footer-note']; ?></textarea><br />
+		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[footer-note]"><?php echo esc_textarea($this->options['footer-note']); ?></textarea><br />
 		<span class="description"><?php _e('This is the text that appears at the bottom of every page, right next to the copyright notice.', 'minimalgeorgia'); ?></span>
 	<?php
 	}
@@ -466,7 +466,7 @@ class MinimalGeorgia {
 	 */
 	function setting_custom_css() {
 	?>
-		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[custom-css]"><?php echo $this->options['custom-css']; ?></textarea><br />
+		<textarea rows="5" class="large-text code" name="minimalgeorgia-options[custom-css]"><?php echo esc_textarea($this->options['custom-css']); ?></textarea><br />
 		<span class="description"><?php _e('Custom stylesheets are included in the head section after all the theme stylesheets are loaded.', 'minimalgeorgia'); ?></span>
 	<?php
 	}

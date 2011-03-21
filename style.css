@@ -797,7 +797,7 @@ hr {
 
 /* Post Formst */
 .format-gallery .post-title {
-	background: transparent url(images/post-formats/gallery.png) 0 9px no-repeat;
+	background: transparent url(images/post-formats/image.png) 0 9px no-repeat;
 	padding-left: 30px;
 }
 
