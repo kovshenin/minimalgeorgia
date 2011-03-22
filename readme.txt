@@ -14,6 +14,7 @@ Theme features:
  * sticky-post
  * editor-style
  * post-formats
+ * sub-menus
 
 Notes & Limitations:
 
