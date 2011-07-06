@@ -48,7 +48,8 @@ class MinimalGeorgia {
 		// Default options, lower-level ones are added during firstrun
 		$this->defaults = array(
 			'color-scheme' => 'blue',
-			'footer-note' => __('Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings.', 'minimalgeorgia')
+			'footer-note' => __('Yes, you can type any text you like here in this footer note. Visit your theme settings page from within your admin panel for more info and other settings.', 'minimalgeorgia'),
+			'custom-css' => ''
 		);
 
 		// Theme supports
@@ -197,7 +198,7 @@ class MinimalGeorgia {
 			'after_title' => '</p>',
 		));
 
-		register_widget('MinimalGeorgiaColorPickerWidget');
+		register_widget('Minimal_Georgia_Color_Picker_Widget');
 	}
 	
 	/*
@@ -402,7 +403,7 @@ class MinimalGeorgia {
 	  *
 	  */
 	function footer_text() {
-		$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', 'Minimal Georgia', '<a title="Konstantin" href="http://kovshenin.com">Konstantin</a>');
+		$author_credit = "\n\n" . sprintf(__('Powered by %1$s running %2$s by %3$s', 'minimalgeorgia'), '<a href="http://wordpress.org">WordPress</a>', 'Minimal Georgia', '<a title="Theme.fm" href="http://theme.fm">Theme.fm</a>');
 		echo apply_filters('minimalgeorgia_footer_note', $this->options['footer-note'] . $author_credit);
 	}
 	 
@@ -428,7 +429,22 @@ class MinimalGeorgia {
 	 */
 	function setting_color_scheme() {
 	?>
-		<select name="minimalgeorgia-options[color-scheme]">
+		<?php
+			$color_schemes = $this->get_valid_color_schemes();
+			foreach ($color_schemes as $value => $caption):
+		?>
+		<div class="mg-color-scheme-item" style="float: left; margin-right: 14px;">
+			<input <?php checked($value == $this->options['color-scheme']); ?> type="radio" name="minimalgeorgia-options[color-scheme]" id="minimalgeorgia-color-scheme-<?php echo $value; ?>" value="<?php echo $value; ?>" />
+			<label for="minimalgeorgia-color-scheme-<?php echo $value; ?>" style="margin-top: 4px; float: left; clear: both;">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/preview-<?php echo $value; ?>.png" style="border: solid 1px #ccc;" /><br />
+				<span class="description" style="margin-top: 8px; float: left;"><?php echo $caption; ?></span>
+			</label>
+		</div>
+		<?php
+			endforeach;
+		?>
+		<br class="clear" />
+		<!--<select name="minimalgeorgia-options[color-scheme]">
 			<?php
 				$color_schemes = $this->get_valid_color_schemes();
 				foreach ($color_schemes as $value => $caption):
@@ -437,7 +453,7 @@ class MinimalGeorgia {
 			<?php
 				endforeach;
 			?>
-		</select><br />
+		</select>--><br />
 		<span class="description"><?php _e('Browse to your home page to see the new color scheme in action.', 'minimalgeorgia'); ?></span>
 	<?php
 	}
@@ -483,7 +499,7 @@ add_action('after_setup_theme', create_function('', 'global $minimalgeorgia; $mi
  * but may be used by the end-user.
  * 
  */
-class MinimalGeorgiaColorPickerWidget extends WP_Widget {
+class Minimal_Georgia_Color_Picker_Widget extends WP_Widget {
 	
 	/*
 	 * Widget Constructor
@@ -493,7 +509,7 @@ class MinimalGeorgiaColorPickerWidget extends WP_Widget {
 	 * $minimalgeorgia->colorscheme_preview_scripts
 	 * 
 	 */
-	function MinimalGeorgiaColorPickerWidget() {
+	function Minimal_Georgia_Color_Picker_Widget() {
 		parent::WP_Widget(false, $name = __('MG Color Picker', 'minimalgeorgia'), $widget_options = array('description' => __('A Minimal Georgia color picker widget for your sidebar.', 'minimalgeorgia')));
 		
 		if (is_active_widget(false, false, $this->id_base, true)) {

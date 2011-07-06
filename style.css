@@ -4,7 +4,7 @@ Theme URI: http://kovshenin.com/wordpress/themes/minimal-georgia/
 Description: A sweet minimal theme focused on typography and filled with Georgia goodness. Two columns, widgets and navigation menus. Five different color schemes to choose from.
 Author: Konstantin Kovshenin
 Author URI: http://kovshenin.com
-Version: 1.4.1
+Version: 1.4.2
 Tags: black, silver, blue, red, purple, white, two-columns, fixed-width, custom-colors, custom-menu, theme-options, threaded-comments, translation-ready, sticky-post, editor-style
 
 License: GPLv2
@@ -117,7 +117,7 @@ ul#menu-header ul.sub-menu, .header .menu ul.children {
 	padding-right: 34px;
 	overflow: hidden;
 	background: #4178ae;
-	top: 29px;
+	
 	margin: 0;
 	display: none;
 	opacity: 0.9;
@@ -225,7 +225,7 @@ p.date {
 }
 
 p.date a {
-	color: inherit;
+	color: inherit !important;
 	text-decoration: inherit;
 }
 
@@ -465,7 +465,7 @@ p.wp-caption-text {
 
 .post-title a {
 	text-decoration: none;
-	color: inherit;
+	color: inherit !important;
 }
 
 h2.post-title, h1.post-title {
@@ -794,7 +794,7 @@ img.avatar {
 
 /* Tags */
 .the-tags a, .the-tags {
-	color: #888;
+	color: #888 !important;
 	font-size: 10pt;
 }
 
